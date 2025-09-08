@@ -1,10 +1,8 @@
 
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DentalHero from './Components/Hero/DentalHero';
 import HomeScreen from './pages/HomeScreen';
 import './App.css';
-
-
 
 function App() {
   return (
