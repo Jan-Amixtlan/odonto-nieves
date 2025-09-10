@@ -77,12 +77,12 @@ const AppointmentForm = () => {
 
     const services = [
         "Odontologia Preventiva",
-        "Blanqueamiento Dental",
-        "Implantes Dentales",
+        "Prótesis Dental",
+        "Implante Dental",
         "Carillas Dentales",
-        "Ortodoncia",
-        "Endodoncia",
-        "Cirugia Oral"
+        "Blanqueamiento Dental",
+        "Limpieza Dental",
+        "Otro"
     ];
 
     const timeSlots = [
