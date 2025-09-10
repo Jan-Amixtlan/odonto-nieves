@@ -13,7 +13,7 @@
 }
 
 .appointment-section {
-    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--turquesa-principal) 100%);
+    background: transparent;
     padding: 80px 0;
     min-height: 100vh;
     position: relative;
@@ -45,7 +45,7 @@
 }
 
 .background-image.active {
-    opacity: 0.4;
+    opacity: 1;
     transform: scale(1);
 }
 
@@ -56,12 +56,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(32, 178, 170, 0.8) 0%, 
-        rgba(79, 209, 199, 0.7) 50%,
-        rgba(0, 212, 170, 0.8) 100%
-    );
-    backdrop-filter: blur(2px);
+    background: transparent;
     z-index: 1;
 }
 
@@ -96,13 +91,13 @@
 .appointment-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 40px;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 30px;
-    padding: 50px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Sección del Calendario */
