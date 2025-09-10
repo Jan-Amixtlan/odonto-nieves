@@ -1,7 +1,8 @@
-import React from 'react';
 import DentalHero from '../Components/Hero/DentalHero';
 import AboutSection from '../Components/AboutSection/AboutSection';
-import ServicesSection from '../Components/ServicesSection/ServicesSection';    
+import ServicesSection from '../Components/ServicesSection/ServicesSection';   
+import VideoGallery from '../Components/VideoGallery/VideoGallery'; 
+
 
 const HomeScreens = () => {
     return (
@@ -9,6 +10,7 @@ const HomeScreens = () => {
             <DentalHero />
             <AboutSection />
             <ServicesSection />
+            <VideoGallery />
             
         </>
     );
