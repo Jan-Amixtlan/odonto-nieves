@@ -3,6 +3,7 @@ import './DentalHero.css';
 
 const DentalHero = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     
     const backgroundImages = [
         'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Dentista
@@ -25,6 +26,39 @@ const DentalHero = () => {
         return () => clearInterval(interval);
     }, [backgroundImages.length]);
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    // Cerrar menú con tecla Escape
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        };
+
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, [isMenuOpen]);
+
+    // Prevenir scroll cuando el menú está abierto
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     return (
         <div className="dental-hero">
             {/* Dynamic Background Images */}
@@ -46,22 +80,92 @@ const DentalHero = () => {
             </div>
             {/* Header */}
             <header className="header">
-                <div className="logo">On</div>
-                <nav className="navigation">
+                <div className="header-left">
+                    <div className="logo">On</div>
+                </div>
+                
+                {/* Desktop Navigation */}
+                <nav className="navigation desktop-nav">
                     <a href="#inicio">Inicio</a>
                     <a href="#sobre-mi">Sobre Mi</a>
                     <a href="#servicios">Servicios</a>
                     <a href="#galeria">Galería</a>
                     <a href="#contactanos">Contáctanos</a>
                 </nav>
-                <button className="whatsapp-btn">Enviar WhatsApp</button>
-                <div className="contact-icons">
-                    <span>📱</span>
-                    <span>✉️</span>
-                    <span>📞</span>
-                    <span>📱</span>
+
+                <div className="header-right">
+                    {/* Mobile Menu Button */}
+                    <button 
+                        className="mobile-menu-btn"
+                        onClick={toggleMenu}
+                        aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                        aria-expanded={isMenuOpen}
+                    >
+                        <span className={`hamburger-line line1 ${isMenuOpen ? 'open' : ''}`}></span>
+                        <span className={`hamburger-line line2 ${isMenuOpen ? 'open' : ''}`}></span>
+                        <span className={`hamburger-line line3 ${isMenuOpen ? 'open' : ''}`}></span>
+                    </button>
+
+                    <div className="header-actions">
+                        <button className="whatsapp-btn">
+                            <span className="whatsapp-icon">📱</span>
+                            <span className="whatsapp-text">WhatsApp</span>
+                        </button>
+                        <div className="contact-icons">
+                            <span title="Teléfono">�</span>
+                            <span title="Email">✉️</span>
+                            <span title="Ubicación">�</span>
+                        </div>
+                    </div>
                 </div>
             </header>
+
+            {/* Mobile Navigation Overlay */}
+            {isMenuOpen && (
+                <div className="mobile-nav-overlay" onClick={closeMenu}></div>
+            )}
+
+            {/* Mobile Navigation Menu */}
+            <nav className={`mobile-navigation ${isMenuOpen ? 'open' : ''}`}>
+                <div className="mobile-nav-header">
+                    <div className="mobile-nav-logo">On</div>
+                    <button 
+                        className="mobile-close-btn"
+                        onClick={closeMenu}
+                        aria-label="Cerrar menú"
+                    >
+                        ×
+                    </button>
+                </div>
+                <div className="mobile-nav-content">
+                    <a href="#inicio" onClick={closeMenu}>
+                        <span className="nav-icon">🏠</span>
+                        Inicio
+                    </a>
+                    <a href="#sobre-mi" onClick={closeMenu}>
+                        <span className="nav-icon">👨‍⚕️</span>
+                        Sobre Mi
+                    </a>
+                    <a href="#servicios" onClick={closeMenu}>
+                        <span className="nav-icon">🦷</span>
+                        Servicios
+                    </a>
+                    <a href="#galeria" onClick={closeMenu}>
+                        <span className="nav-icon">📸</span>
+                        Galería
+                    </a>
+                    <a href="#contactanos" onClick={closeMenu}>
+                        <span className="nav-icon">📞</span>
+                        Contáctanos
+                    </a>
+                </div>
+                <div className="mobile-nav-footer">
+                    <button className="mobile-whatsapp-btn" onClick={closeMenu}>
+                        <span>📱</span>
+                        Enviar WhatsApp
+                    </button>
+                </div>
+            </nav>
 
             {/* Main Content */}
             <main className="main-content">
