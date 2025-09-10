@@ -5,6 +5,9 @@
     --blanco-puro: #FFFFFF;
     --azul-claro: #4FD1C7;
     --turquesa-oscuro: #1A9B96;
+    --azul-marino: #1e3a8a;
+    --purpura-oscuro: #3730a3;
+    --morado: #7c3aed;
 }
 
 * {
@@ -25,7 +28,12 @@ html, body {
     width: 100vw;
     height: 100vh;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--turquesa-principal) 100%);
+    background: linear-gradient(135deg, 
+        var(--azul-claro) 0%,           /* Color turquesa original como base */
+        var(--azul-marino) 30%,         /* Azul marino */
+        var(--turquesa-principal) 60%,  /* Turquesa principal más presente */
+        var(--azul-claro) 100%          /* Final en turquesa claro */
+    );
     font-family: 'Arial', sans-serif;
     position: relative;
     overflow: hidden;

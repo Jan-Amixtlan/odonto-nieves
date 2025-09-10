@@ -34,7 +34,12 @@ const DentalHero = () => {
                         key={index}
                         className={`background-image ${index === currentImageIndex ? 'active' : ''}`}
                         style={{
-                            backgroundImage: `linear-gradient(135deg, rgba(79, 209, 199, 0.8) 0%, rgba(32, 178, 170, 0.8) 100%), url(${image})`
+                            backgroundImage: `linear-gradient(135deg, 
+                                rgba(79, 209, 199, 0.8) 0%, 
+                                rgba(30, 58, 138, 0.5) 30%, 
+                                rgba(32, 178, 170, 0.7) 60%, 
+                                rgba(79, 209, 199, 0.8) 100%), 
+                                url(${image})`
                         }}
                     />
                 ))}
