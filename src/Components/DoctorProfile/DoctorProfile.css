@@ -1,0 +1,583 @@
+:root {
+    --turquesa-principal: #20B2AA;
+    --verde-esmeralda: #00D4AA;
+    --blanco-puro: #FFFFFF;
+    --azul-claro: #4FD1C7;
+    --turquesa-oscuro: #1A9B96;
+    --gris-texto: #2C3E50;
+    --gris-claro: #7F8C8D;
+    --gris-muy-claro: #BDC3C7;
+    --fondo-claro: #F8F9FA;
+}
+
+.doctor-profile-section {
+    background: linear-gradient(135deg, var(--fondo-claro) 0%, #FFFFFF 100%);
+    padding: 120px 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.doctor-profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--gris-texto);
+}
+
+.title-line {
+    display: block;
+    animation: fadeInLine 0.8s ease forwards;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.title-highlight {
+    display: block;
+    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeInLine 0.8s ease forwards;
+    animation-delay: 0.4s;
+    font-size: 48px;
+    margin-top: 10px;
+}
+
+/* Content Grid */
+.profile-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 120px;
+    align-items: center;
+}
+
+/* Doctor Card */
+.doctor-card {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.doctor-card.animate-in {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.card-inner {
+    position: relative;
+    background: var(--blanco-puro);
+    border-radius: 30px;
+    padding: 15px;
+    box-shadow:
+        0 20px 60px rgba(32, 178, 170, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    transform: scale(1.4);
+}
+
+.card-inner:hover {
+    transform: scale(1.4) translateY(-10px);
+    box-shadow:
+        0 30px 80px rgba(32, 178, 170, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.doctor-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.doctor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.card-inner:hover .doctor-image {
+    transform: scale(1.05);
+}
+
+.image-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
+    background-clip: padding-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-inner:hover .image-border {
+    opacity: 0.3;
+}
+
+/* Doctor Info */
+.doctor-info {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.doctor-info.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.info-content {
+    padding-left: 20px;
+}
+
+.doctor-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gris-texto);
+    margin: 0 0 40px 0;
+    line-height: 1.3;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+/* Credentials */
+.credentials-list {
+    margin-bottom: 40px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.check-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco-puro);
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.credential-text {
+    font-size: 18px;
+    color: var(--gris-claro);
+    font-weight: 500;
+}
+
+/* Quote */
+.inspirational-quote {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(32, 178, 170, 0.05), rgba(0, 212, 170, 0.05));
+    border-left: 4px solid var(--turquesa-principal);
+    border-radius: 15px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.quote-text {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gris-texto);
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+.quote-author {
+    font-size: 16px;
+    color: var(--gris-claro);
+    font-weight: 600;
+}
+
+/* CTA Button */
+.appointment-cta {
+    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
+    color: var(--blanco-puro);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(32, 178, 170, 0.3);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.appointment-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.appointment-cta:hover::before {
+    left: 100%;
+}
+
+.appointment-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(32, 178, 170, 0.4);
+}
+
+.cta-arrow {
+    transition: transform 0.3s ease;
+}
+
+.appointment-cta:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+/* Decorative Elements */
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-element {
+    position: absolute;
+    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.element-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 10%;
+    animation: float1 6s ease-in-out infinite;
+}
+
+.element-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 5%;
+    animation: float2 8s ease-in-out infinite;
+}
+
+.element-3 {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    right: 5%;
+    animation: float3 7s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLine {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-20px) rotate(120deg);
+    }
+
+    66% {
+        transform: translateY(10px) rotate(240deg);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(20px) translateY(-15px);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-25px) scale(1.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .doctor-profile-container {
+        padding: 0 40px;
+    }
+
+    .profile-content {
+        gap: 100px;
+        grid-template-columns: 1.4fr 1fr;
+    }
+
+    .card-inner {
+        transform: scale(1.3);
+        padding: 15px;
+    }
+
+    .card-inner:hover {
+        transform: scale(1.3) translateY(-8px);
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .title-highlight {
+        font-size: 42px;
+    }
+
+    .doctor-name {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-profile-section {
+        padding: 80px 0;
+    }
+
+    .doctor-profile-container {
+        padding: 0 20px;
+    }
+
+    .profile-header {
+        margin-bottom: 60px;
+    }
+
+    .main-title {
+        font-size: 30px;
+    }
+
+    .title-highlight {
+        font-size: 36px;
+    }
+
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .card-inner {
+        padding: 20px;
+        transform: scale(1.2);
+    }
+
+    .card-inner:hover {
+        transform: scale(1.2) translateY(-8px);
+    }
+
+    .info-content {
+        padding-left: 0;
+    }
+
+    .doctor-name {
+        font-size: 28px;
+    }
+
+    .credential-text {
+        font-size: 16px;
+    }
+
+    .quote-text {
+        font-size: 18px;
+    }
+
+    .appointment-cta {
+        padding: 16px 32px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .doctor-profile-container {
+        padding: 0 15px;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .title-highlight {
+        font-size: 28px;
+    }
+
+    .doctor-name {
+        font-size: 24px;
+    }
+
+    .card-inner {
+        padding: 15px;
+        transform: scale(1.15);
+    }
+
+    .card-inner:hover {
+        transform: scale(1.15) translateY(-5px);
+    }
+
+    .credential-item {
+        gap: 12px;
+    }
+
+    .check-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .credential-text {
+        font-size: 14px;
+    }
+
+    .inspirational-quote {
+        padding: 20px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+    }
+
+    .appointment-cta {
+        padding: 14px 24px;
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .floating-element {
+        display: none;
+    }
+}

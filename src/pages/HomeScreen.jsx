@@ -3,6 +3,8 @@ import AboutSection from '../Components/AboutSection/AboutSection';
 import ServicesSection from '../Components/ServicesSection/ServicesSection';   
 import VideoGallery from '../Components/VideoGallery/VideoGallery'; 
 import AppointmentForm from '../Components/AppointmentForm/AppointmentForm';
+import DoctorProfile from '../Components/DoctorProfile/DoctorProfile';
+
 
 
 const HomeScreens = () => {
@@ -13,6 +15,7 @@ const HomeScreens = () => {
             <ServicesSection />
             <VideoGallery />
             <AppointmentForm />
+            <DoctorProfile />
             
         </>
     );
