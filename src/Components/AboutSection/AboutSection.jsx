@@ -8,7 +8,7 @@ const AboutSection = () => {
                 {/* Imagen de la doctora */}
                 <div className="doctor-image-container">
                     <img
-                        src="/api/placeholder/400/500"
+                        src="/ComponenteSobreMi.jpg"
                         alt="Dra. Blanca Nieves Rodríguez"
                         className="doctor-image"
                     />
