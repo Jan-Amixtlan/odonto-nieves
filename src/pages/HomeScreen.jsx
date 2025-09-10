@@ -5,6 +5,7 @@ import VideoGallery from '../Components/VideoGallery/VideoGallery';
 import AppointmentForm from '../Components/AppointmentForm/AppointmentForm';
 import DoctorProfile from '../Components/DoctorProfile/DoctorProfile';
 import Testimonials from '../Components/Testimonials/Testimonials';
+import ContactFooter from '../Components/ContactFooter/ContactFooter';
 
 
 const HomeScreens = () => {
@@ -17,7 +18,7 @@ const HomeScreens = () => {
             <AppointmentForm />
             <DoctorProfile />
             <Testimonials />
-            
+            <ContactFooter />
         </>
     );
 }
