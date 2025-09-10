@@ -5,6 +5,7 @@ const DentalHero = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [showAfter, setShowAfter] = useState(false);
     
     const backgroundImages = [
         'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Dentista
@@ -26,6 +27,15 @@ const DentalHero = () => {
 
         return () => clearInterval(interval);
     }, [backgroundImages.length]);
+
+    // Controlar la animación antes/después
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowAfter(prev => !prev);
+        }, 3000); // Cambia cada 3 segundos
+
+        return () => clearInterval(interval);
+    }, []);
 
     // Activar animaciones después de que el componente se monte
     useEffect(() => {
@@ -195,7 +205,7 @@ const DentalHero = () => {
                     <div className="before-after-container">
                         <div className="comparison-image">
                             <div className="image-split">
-                                <div className="before-half">
+                                <div className={`before-half ${showAfter ? 'reveal' : ''}`}>
                                     <img 
                                         src="/Before.png" 
                                         alt="Dientes antes del tratamiento"
@@ -210,12 +220,15 @@ const DentalHero = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="center-divider">
+                            <div className={`center-divider ${showAfter ? 'moved' : ''}`}>
                                 <div className="divider-line"></div>
-                                <div className="center-label">AFTER</div>
+                                <div className="center-label">
+                                    <span className="dynamic-text">{showAfter ? 'DESPUÉS' : 'ANTES'}</span>
+                                </div>
                             </div>
                             <div className="corner-labels">
-                                <span className="before-label">BEFORE</span>
+                                <span className={`before-label ${showAfter ? 'hidden' : 'visible'}`}>BEFORE</span>
+                                <span className={`after-label ${showAfter ? 'visible' : 'hidden'}`}>AFTER</span>
                             </div>
                         </div>
                     </div>
