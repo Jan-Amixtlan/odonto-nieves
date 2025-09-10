@@ -437,6 +437,17 @@ body {
     opacity: 1 !important;
 }
 
+/* Quitar relleno de autocompletado */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--blanco-puro) inset !important;
+    -webkit-text-fill-color: var(--gris-texto) !important;
+    background-color: var(--blanco-puro) !important;
+    background: var(--blanco-puro) !important;
+}
+
 .form-group select {
     cursor: pointer;
     appearance: none;
@@ -1090,5 +1101,6 @@ body {
     border-color: var(--success);
     background: var(--blanco-puro) !important;
     color: var(--gris-texto) !important;
+
     font-weight: 500;
 }
