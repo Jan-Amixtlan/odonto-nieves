@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DentalHero from './Components/Hero/DentalHero';
 import HomeScreen from './pages/HomeScreen';
+import AboutMeScreen from './pages/AboutMeScreen';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="/about" element={<AboutMeScreen />} />
       </Routes>
     </BrowserRouter>
   );

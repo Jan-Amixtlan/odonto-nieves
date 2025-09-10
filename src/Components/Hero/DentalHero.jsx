@@ -105,8 +105,8 @@ const DentalHero = () => {
                 
                 {/* Desktop Navigation */}
                 <nav className="navigation desktop-nav">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#sobre-mi">Sobre Mi</a>
+                    <a href="/">Inicio</a>
+                    <a href="/about">Sobre Mi</a>
                     <a href="#servicios">Servicios</a>
                     <a href="#galeria">Galería</a>
                     <a href="#contactanos">Contáctanos</a>
