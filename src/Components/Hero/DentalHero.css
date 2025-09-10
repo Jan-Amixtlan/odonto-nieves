@@ -736,9 +736,11 @@ html, body {
 .image-indicators {
     position: absolute;
     bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
     z-index: 10;
     opacity: 0;
@@ -1033,6 +1035,10 @@ html, body {
         bottom: 20px;
         gap: 8px;
         animation-delay: 0.8s;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
     }
 
     .indicator {
@@ -1151,6 +1157,10 @@ html, body {
     .image-indicators {
         bottom: 15px;
         gap: 6px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
     }
 
     .indicator {
@@ -1216,5 +1226,19 @@ html, body {
     .contact-icons {
         gap: 4px;
         font-size: 12px;
+    }
+
+    .image-indicators {
+        bottom: 10px;
+        gap: 4px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .indicator {
+        width: 6px;
+        height: 6px;
     }
 }
