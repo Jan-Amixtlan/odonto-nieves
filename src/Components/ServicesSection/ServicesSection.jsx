@@ -11,13 +11,13 @@ const ServicesSection = () => {
             alt: "Blanqueamiento dental antes y después",
             detailedInfo: {
                 question: "¿Qué es?",
-                answer: "Tratamiento estético que elimina manchas y decoloraciones de los dientes, devolviendo su blancura natural mediante técnicas seguras y efectivas."
+                answer: "El blanqueamiento dental es uno de los métodos más comunes para tratar la decoloración de los dientes."
             }
         },
         {
             id: 2,
             title: "Implante Dental",
-            image: "/api/placeholder/300/250",
+            image: "/Services2.jpg",
             description: "Reemplazo permanente para dientes perdidos",
             alt: "Modelo de implante dental",
             detailedInfo: {
@@ -28,12 +28,12 @@ const ServicesSection = () => {
         {
             id: 3,
             title: "Carillas Dentales",
-            image: "/api/placeholder/300/250",
+            image: "/Services3.jpg",
             description: "Mejora estética para tu sonrisa perfecta",
             alt: "Sonrisa con carillas dentales",
             detailedInfo: {
                 question: "¿Qué es?",
-                answer: "Láminas delgadas de porcelana que se adhieren a la superficie frontal de los dientes para corregir imperfecciones y crear una sonrisa perfecta."
+                answer: "Las carillas son restauraciones que cubren toda la cara frontal del diente. Estas imitan a la perfección la forma y el color de los dientes naturales, cuya finalidad es casi siempre estética."
             }
         }
     ];

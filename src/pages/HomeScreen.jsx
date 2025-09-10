@@ -10,7 +10,6 @@ const HomeScreens = () => {
             <AboutSection />
             <ServicesSection />
             
-            <h1>Hola</h1>
         </>
     );
 }
