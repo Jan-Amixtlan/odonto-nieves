@@ -355,7 +355,7 @@ body {
     font-size: 16px;
     transition: all 0.3s ease;
     font-family: inherit;
-    background: var(--blanco-puro);
+    background: var(--blanco-puro) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
@@ -363,6 +363,7 @@ body {
     box-sizing: border-box;
     max-width: 100%;
     min-width: 0;
+    color: var(--gris-texto) !important;
 }
 
 .form-group input:focus,
@@ -371,23 +372,69 @@ body {
     outline: none;
     border-color: var(--turquesa-principal);
     box-shadow: 0 0 0 3px rgba(32, 178, 170, 0.1);
+    background: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
 }
 
 .form-group select:valid:not(:focus) {
-    background: var(--blanco-puro);
-    color: var(--gris-texto);
+    background: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
     border-color: var(--success);
 }
 
 .form-group input:valid:not(:focus) {
-    background: var(--blanco-puro);
-    color: var(--gris-texto);
+    background: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
     border-color: var(--success);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: var(--gris-muy-claro);
+}
+
+/* Asegurar visibilidad del texto en todos los navegadores */
+.form-group input::-webkit-input-placeholder {
+    color: var(--gris-muy-claro) !important;
+}
+
+.form-group input::-moz-placeholder {
+    color: var(--gris-muy-claro) !important;
+    opacity: 1;
+}
+
+.form-group input:-ms-input-placeholder {
+    color: var(--gris-muy-claro) !important;
+}
+
+.form-group textarea::-webkit-input-placeholder {
+    color: var(--gris-muy-claro) !important;
+}
+
+.form-group textarea::-moz-placeholder {
+    color: var(--gris-muy-claro) !important;
+    opacity: 1;
+}
+
+.form-group textarea:-ms-input-placeholder {
+    color: var(--gris-muy-claro) !important;
+}
+
+/* Texto visible al escribir */
+.form-group input:not(:placeholder-shown),
+.form-group textarea:not(:placeholder-shown),
+.form-group select:not([value=""]) {
+    color: var(--gris-texto) !important;
+    background: var(--blanco-puro) !important;
+}
+
+/* Asegurar contraste del texto */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    -webkit-text-fill-color: var(--gris-texto) !important;
+    -webkit-opacity: 1 !important;
+    opacity: 1 !important;
 }
 
 .form-group select {
@@ -397,20 +444,20 @@ body {
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 20px;
-    background-color: var(--blanco-puro);
-    color: var(--gris-texto);
+    background-color: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
     font-weight: 500;
 }
 
 .form-group select:not([value=""]):not(:focus) {
-    color: var(--gris-texto);
-    background-color: var(--blanco-puro);
+    color: var(--gris-texto) !important;
+    background-color: var(--blanco-puro) !important;
     font-weight: 600;
 }
 
 .form-group select option {
-    background: var(--blanco-puro);
-    color: var(--gris-texto);
+    background: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
     padding: 12px 15px;
     border: none;
     font-size: 16px;
@@ -425,6 +472,8 @@ body {
 .form-group textarea {
     resize: vertical;
     min-height: 80px;
+    color: var(--gris-texto) !important;
+    background: var(--blanco-puro) !important;
 }
 
 .submit-button {
@@ -591,6 +640,8 @@ body {
         max-width: 100%;
         border-radius: 10px;
         min-height: 48px;
+        background: var(--blanco-puro) !important;
+        color: var(--gris-texto) !important;
     }
 
     .form-group textarea {
@@ -738,6 +789,8 @@ body {
         max-width: 100%;
         min-width: 0;
         min-height: 46px;
+        background: var(--blanco-puro) !important;
+        color: var(--gris-texto) !important;
     }
 
     .form-group textarea {
@@ -839,6 +892,8 @@ body {
         min-width: 0;
         min-height: 44px;
         border-radius: 6px;
+        background: var(--blanco-puro) !important;
+        color: var(--gris-texto) !important;
     }
 
     .form-group textarea {
@@ -920,6 +975,8 @@ body {
         min-height: 48px;
         font-size: 16px; /* Evita zoom en iOS */
         padding: 16px 14px;
+        background: var(--blanco-puro) !important;
+        color: var(--gris-texto) !important;
     }
 
     .submit-button {
@@ -955,6 +1012,8 @@ body {
         .form-group textarea {
             min-height: 46px;
             padding: 14px 12px;
+            background: var(--blanco-puro) !important;
+            color: var(--gris-texto) !important;
         }
 
         .submit-button {
@@ -974,6 +1033,8 @@ body {
         .form-group textarea {
             min-height: 44px;
             padding: 12px 10px;
+            background: var(--blanco-puro) !important;
+            color: var(--gris-texto) !important;
         }
 
         .submit-button {
@@ -1020,14 +1081,14 @@ body {
 .form-group input:invalid:not(:focus):not(:placeholder-shown),
 .form-group select:invalid:not(:focus) {
     border-color: var(--error);
-    background: var(--blanco-puro);
-    color: var(--gris-texto);
+    background: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
 }
 
 .form-group input:valid:not(:focus):not(:placeholder-shown),
 .form-group select:valid:not(:focus) {
     border-color: var(--success);
-    background: var(--blanco-puro);
-    color: var(--gris-texto);
+    background: var(--blanco-puro) !important;
+    color: var(--gris-texto) !important;
     font-weight: 500;
 }
