@@ -79,27 +79,27 @@ html, body {
     margin-top: -30px;
 }
 
-.logo {
+.dental-hero .logo {
     font-size: 48px;
     font-weight: bold;
-    color: var(--blanco-puro);
+    color: var(--blanco-puro) !important;
     font-family: 'Georgia', serif;
 }
 
-.navigation {
+.dental-hero .navigation {
     display: flex;
     gap: 30px;
 }
 
-.navigation a {
-    color: var(--blanco-puro);
+.dental-hero .navigation a {
+    color: var(--blanco-puro) !important;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
     transition: opacity 0.3s ease;
 }
 
-.navigation a:hover {
+.dental-hero .navigation a:hover {
     opacity: 0.8;
 }
 
@@ -139,24 +139,26 @@ html, body {
     z-index: 5;
 }
 
-.text-section {
-    color: var(--blanco-puro);
+.dental-hero .text-section {
+    color: var(--blanco-puro) !important;
     margin-left: 80px;
 }
 
-.main-title {
+.dental-hero .main-title {
     font-size: 50px;
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--blanco-puro) !important;
 }
 
-.subtitle {
+.dental-hero .subtitle {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 40px;
     opacity: 0.95;
+    color: var(--blanco-puro) !important;
 }
 
 .cta-button {

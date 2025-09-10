@@ -1,0 +1,218 @@
+/* Paleta de colores Odontonieves - Scoped para AboutSection */
+.about-section {
+    --turquesa-principal: #20B2AA;
+    --verde-esmeralda: #00D4AA;
+    --blanco-puro: #FFFFFF;
+    --azul-claro: #4FD1C7;
+    --turquesa-oscuro: #1A9B96;
+    --gris-texto: #2C3E50;
+    --gris-claro: #7F8C8D;
+    --fondo-claro: #F8F9FA;
+}
+
+.about-section {
+    background-color: var(--fondo-claro);
+    padding: 100px 0;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Imagen de la doctora */
+.doctor-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doctor-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(32, 178, 170, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(32, 178, 170, 0.2);
+}
+
+/* Contenido de texto */
+.about-content {
+    color: var(--gris-texto);
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-tag {
+    color: var(--turquesa-principal);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--gris-texto);
+    margin: 0;
+}
+
+.highlight-text {
+    color: var(--gris-claro);
+    font-weight: 400;
+}
+
+.description {
+    margin: 40px 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gris-claro);
+}
+
+.description strong {
+    color: var(--gris-texto);
+    font-weight: 600;
+}
+
+.read-more-btn {
+    background-color: var(--turquesa-principal);
+    color: var(--blanco-puro);
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
+}
+
+.read-more-btn:hover {
+    background-color: var(--turquesa-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.4);
+}
+
+.read-more-btn:active {
+    transform: translateY(0);
+}
+
+/* Botón flotante de navegación */
+.floating-nav-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--turquesa-principal);
+    color: var(--blanco-puro);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(32, 178, 170, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-nav-btn:hover {
+    background-color: var(--verde-esmeralda);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 212, 170, 0.4);
+}
+
+.floating-nav-btn:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 60px;
+        padding: 0 40px;
+    }
+
+    .main-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .doctor-image {
+        max-width: 300px;
+    }
+
+    .floating-nav-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .description {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 0 15px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .doctor-image {
+        max-width: 250px;
+    }
+
+    .read-more-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .floating-nav-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
