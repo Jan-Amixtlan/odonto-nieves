@@ -211,10 +211,81 @@ body {
     margin: 0 0 10px 0;
 }
 
+.month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.month-nav-btn {
+    background: var(--blanco-puro);
+    border: 2px solid var(--turquesa-principal);
+    border-radius: 8px;
+    width: auto;
+    min-width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--turquesa-principal);
+    box-shadow: 0 2px 8px rgba(32, 178, 170, 0.15);
+    font-weight: bold;
+    position: relative;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.month-nav-btn::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, var(--turquesa-principal), var(--verde-esmeralda));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.month-nav-btn:hover {
+    background: var(--turquesa-principal);
+    color: var(--blanco-puro);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(32, 178, 170, 0.3);
+}
+
+.month-nav-btn:hover::before {
+    opacity: 1;
+}
+
+.month-nav-btn:active {
+    transform: scale(0.95) translateY(0);
+}
+
+.nav-text {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prev-btn svg {
+    order: -1;
+}
+
+.next-btn {
+    flex-direction: row-reverse;
+}
+
 .month-year {
     font-size: 16px;
     color: var(--gris-claro);
     font-weight: 500;
+    flex: 1;
+    text-align: center;
 }
 
 .calendar {
@@ -609,6 +680,27 @@ body {
         margin-bottom: 8px;
     }
 
+    .month-navigation {
+        gap: 10px;
+    }
+
+    .month-nav-btn {
+        min-width: 70px;
+        height: 36px;
+        border-radius: 6px;
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .month-nav-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .nav-text {
+        font-size: 10px;
+    }
+
     .calendar-day {
         font-size: 13px;
         min-height: 42px;
@@ -733,6 +825,27 @@ body {
     .calendar-title {
         font-size: 18px;
         margin-bottom: 6px;
+    }
+
+    .month-navigation {
+        gap: 8px;
+    }
+
+    .month-nav-btn {
+        min-width: 60px;
+        height: 32px;
+        border-radius: 5px;
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .month-nav-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .nav-text {
+        font-size: 9px;
     }
 
     .calendar {
@@ -886,6 +999,27 @@ body {
     .calendar-title {
         font-size: 16px;
         margin-bottom: 4px;
+    }
+
+    .month-navigation {
+        gap: 6px;
+    }
+
+    .month-nav-btn {
+        min-width: 50px;
+        height: 28px;
+        border-radius: 4px;
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .month-nav-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .nav-text {
+        font-size: 8px;
     }
 
     .calendar-header {

@@ -4,6 +4,7 @@ import './AppointmentForm.css';
 const AppointmentForm = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentCalendarDate, setCurrentCalendarDate] = useState(new Date());
     const [formData, setFormData] = useState({
         fullName: '',
         age: '',
@@ -33,11 +34,11 @@ const AppointmentForm = () => {
         return () => clearInterval(interval);
     }, [backgroundImages.length]);
 
-    // Generar calendario del mes actual
+    // Generar calendario del mes seleccionado
     const generateCalendar = () => {
         const today = new Date();
-        const currentMonth = today.getMonth();
-        const currentYear = today.getFullYear();
+        const currentMonth = currentCalendarDate.getMonth();
+        const currentYear = currentCalendarDate.getFullYear();
         const firstDay = new Date(currentYear, currentMonth, 1);
         const lastDay = new Date(currentYear, currentMonth + 1, 0);
         const startDate = new Date(firstDay);
@@ -72,8 +73,25 @@ const AppointmentForm = () => {
     const calendar = generateCalendar();
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    const currentMonth = monthNames[new Date().getMonth()];
-    const currentYear = new Date().getFullYear();
+    const currentMonth = monthNames[currentCalendarDate.getMonth()];
+    const currentYear = currentCalendarDate.getFullYear();
+
+    // Funciones para navegar entre meses
+    const goToPreviousMonth = () => {
+        setCurrentCalendarDate(prev => {
+            const newDate = new Date(prev);
+            newDate.setMonth(prev.getMonth() - 1);
+            return newDate;
+        });
+    };
+
+    const goToNextMonth = () => {
+        setCurrentCalendarDate(prev => {
+            const newDate = new Date(prev);
+            newDate.setMonth(prev.getMonth() + 1);
+            return newDate;
+        });
+    };
 
     const services = [
         "Odontologia Preventiva",
@@ -112,6 +130,19 @@ const AppointmentForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Formulario enviado:', { ...formData, selectedDate });
+        
+        // Limpiar formulario después del envío
+        setFormData({
+            fullName: '',
+            age: '',
+            phone: '',
+            email: '',
+            service: '',
+            time: '',
+            message: ''
+        });
+        setSelectedDate(null);
+        
         // Aquí implementarías la lógica de envío
         alert('¡Cita solicitada exitosamente!');
     };
@@ -144,7 +175,33 @@ const AppointmentForm = () => {
                     <div className="calendar-section">
                         <div className="calendar-header">
                             <h3 className="calendar-title">Selecciona una fecha</h3>
-                            <div className="month-year">{currentMonth} {currentYear}</div>
+                            <div className="month-navigation">
+                                <button 
+                                    type="button" 
+                                    className="month-nav-btn prev-btn" 
+                                    onClick={goToPreviousMonth}
+                                    aria-label="Mes anterior"
+                                    title="Mes anterior"
+                                >
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                    <span className="nav-text">Anterior</span>
+                                </button>
+                                <div className="month-year">{currentMonth} {currentYear}</div>
+                                <button 
+                                    type="button" 
+                                    className="month-nav-btn next-btn" 
+                                    onClick={goToNextMonth}
+                                    aria-label="Mes siguiente"
+                                    title="Mes siguiente"
+                                >
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                    <span className="nav-text">Siguiente</span>
+                                </button>
+                            </div>
                         </div>
 
                         <div className="calendar">
