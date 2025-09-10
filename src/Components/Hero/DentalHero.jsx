@@ -77,12 +77,29 @@ const DentalHero = () => {
 
                 <div className="image-section">
                     <div className="before-after-container">
-                        <div className="image-placeholder">
-                            <div className="before-side">
-                                <span className="label">BEFORE</span>
+                        <div className="comparison-image">
+                            <div className="image-split">
+                                <div className="before-half">
+                                    <img 
+                                        src="/Before.png" 
+                                        alt="Dientes antes del tratamiento"
+                                        className="teeth-image before-teeth"
+                                    />
+                                </div>
+                                <div className="after-half">
+                                    <img 
+                                        src="/After.png" 
+                                        alt="Dientes después del tratamiento"
+                                        className="teeth-image after-teeth"
+                                    />
+                                </div>
                             </div>
-                            <div className="after-side">
-                                <span className="label">AFTER</span>
+                            <div className="center-divider">
+                                <div className="divider-line"></div>
+                                <div className="center-label">AFTER</div>
+                            </div>
+                            <div className="corner-labels">
+                                <span className="before-label">BEFORE</span>
                             </div>
                         </div>
                     </div>
