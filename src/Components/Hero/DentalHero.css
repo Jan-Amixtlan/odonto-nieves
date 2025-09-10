@@ -80,6 +80,17 @@ html, body {
     z-index: 10;
     margin-top: -30px;
     width: 100%;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDown 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-left {
@@ -98,6 +109,15 @@ html, body {
     font-weight: bold;
     color: var(--blanco-puro) !important;
     font-family: 'Georgia', serif;
+    transform: scale(0.8);
+    animation: logoScale 0.6s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes logoScale {
+    to {
+        transform: scale(1);
+    }
 }
 
 .desktop-nav {
@@ -113,17 +133,44 @@ html, body {
     transition: all 0.3s ease;
     padding: 8px 16px;
     border-radius: 6px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: navItemSlide 0.5s ease forwards;
+}
+
+.dental-hero .navigation a:nth-child(1) { animation-delay: 0.6s; }
+.dental-hero .navigation a:nth-child(2) { animation-delay: 0.7s; }
+.dental-hero .navigation a:nth-child(3) { animation-delay: 0.8s; }
+.dental-hero .navigation a:nth-child(4) { animation-delay: 0.9s; }
+.dental-hero .navigation a:nth-child(5) { animation-delay: 1.0s; }
+
+@keyframes navItemSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dental-hero .navigation a:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
+    transform: translateY(-3px);
 }
 
 .header-actions {
     display: flex;
     align-items: center;
     gap: 15px;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideLeft 0.6s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes slideLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .whatsapp-btn {
@@ -363,6 +410,14 @@ html, body {
 .dental-hero .text-section {
     color: var(--blanco-puro) !important;
     margin-left: 80px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dental-hero .text-section.loaded {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .dental-hero .main-title {
@@ -372,14 +427,56 @@ html, body {
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     color: var(--blanco-puro) !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.title-highlight {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.2s;
+    background: linear-gradient(45deg, var(--verde-esmeralda), var(--azul-claro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    text-shadow: none;
+}
+
+.dental-hero .main-title.animate-in .title-line {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dental-hero .main-title.animate-in .title-highlight {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .dental-hero .subtitle {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 40px;
-    opacity: 0.95;
+    opacity: 0;
     color: var(--blanco-puro) !important;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.4s;
+}
+
+.dental-hero .subtitle.animate-in {
+    opacity: 0.95;
+    transform: translateY(0);
 }
 
 .cta-button {
@@ -393,11 +490,37 @@ html, body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.6s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
 }
 
 .cta-button:hover {
     background-color: var(--verde-esmeralda);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -406,6 +529,15 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.3s;
+}
+
+.image-section.loaded {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .before-after-container {
@@ -421,6 +553,12 @@ html, body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.comparison-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .image-split {
@@ -505,30 +643,6 @@ html, body {
     font-size: 11px;
 }
 
-/* Scroll to top button */
-.scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--verde-esmeralda);
-    color: var(--blanco-puro);
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-.scroll-top:hover {
-    background-color: var(--turquesa-oscuro);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
 /* Image Indicators */
 .image-indicators {
     position: absolute;
@@ -538,6 +652,20 @@ html, body {
     display: flex;
     gap: 12px;
     z-index: 10;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 .indicator {
@@ -546,19 +674,39 @@ html, body {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 2px solid transparent;
+    position: relative;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--verde-esmeralda);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
 }
 
 .indicator:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
+    transform: scale(1.3);
+}
+
+.indicator:hover::before {
+    width: 100%;
+    height: 100%;
 }
 
 .indicator.active {
     background-color: var(--blanco-puro);
     border-color: var(--verde-esmeralda);
-    transform: scale(1.3);
+    transform: scale(1.4);
+    box-shadow: 0 0 15px rgba(79, 209, 199, 0.6);
 }
 
 /* Responsive Design */
@@ -590,9 +738,17 @@ html, body {
         order: 1;
     }
 
+    .dental-hero .text-section.loaded {
+        transform: translateX(0);
+    }
+
     .image-section {
         order: 2;
         margin-top: 20px;
+    }
+
+    .image-section.loaded {
+        transform: translateX(0);
     }
 
     .dental-hero .main-title {
@@ -662,37 +818,23 @@ html, body {
     .header {
         padding: 10px 20px;
         margin-top: -15px;
+        animation-delay: 0.1s;
     }
 
     .dental-hero .logo {
         font-size: 32px;
+        animation-delay: 0.2s;
     }
 
     .header-actions {
         gap: 10px;
+        animation-delay: 0.4s;
     }
 
-    .mobile-navigation {
-        width: 280px;
-        max-width: 80vw;
-    }
-
-    .mobile-nav-content a {
-        font-size: 16px;
-        padding: 12px 20px;
-    }
-
-    .mobile-nav-content a {
-        font-size: 20px;
-        padding: 12px 25px;
-    }
-
-    .main-content {
-        padding: 20px 20px;
-        gap: 25px;
-        height: auto;
-        min-height: calc(100vh - 140px);
-        margin-top: -60px;
+    .dental-hero .navigation a {
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 
     .dental-hero .text-section {
@@ -706,16 +848,45 @@ html, body {
         margin-bottom: 20px;
     }
 
+    .title-line,
+    .title-highlight {
+        transition-duration: 0.6s;
+    }
+
+    .title-highlight {
+        transition-delay: 0.15s;
+    }
+
     .dental-hero .subtitle {
         font-size: 16px;
         line-height: 1.5;
         margin-bottom: 25px;
         padding: 0 10px;
+        transition-delay: 0.3s;
     }
 
     .cta-button {
         padding: 15px 30px;
         font-size: 16px;
+        transition-delay: 0.45s;
+    }
+
+    .mobile-navigation {
+        width: 280px;
+        max-width: 80vw;
+    }
+
+    .mobile-nav-content a {
+        font-size: 20px;
+        padding: 12px 25px;
+    }
+
+    .main-content {
+        padding: 20px 20px;
+        gap: 25px;
+        height: auto;
+        min-height: calc(100vh - 140px);
+        margin-top: -60px;
     }
 
     .whatsapp-btn {
@@ -749,19 +920,12 @@ html, body {
     .image-indicators {
         bottom: 20px;
         gap: 8px;
+        animation-delay: 0.8s;
     }
 
     .indicator {
         width: 10px;
         height: 10px;
-    }
-
-    .scroll-top {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 18px;
     }
 }
 
@@ -880,14 +1044,6 @@ html, body {
     .indicator {
         width: 8px;
         height: 8px;
-    }
-
-    .scroll-top {
-        width: 40px;
-        height: 40px;
-        bottom: 15px;
-        right: 15px;
-        font-size: 16px;
     }
 }
 

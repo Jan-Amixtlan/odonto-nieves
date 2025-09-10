@@ -4,6 +4,7 @@ import './DentalHero.css';
 const DentalHero = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
     
     const backgroundImages = [
         'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Dentista
@@ -25,6 +26,14 @@ const DentalHero = () => {
 
         return () => clearInterval(interval);
     }, [backgroundImages.length]);
+
+    // Activar animaciones después de que el componente se monte
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -169,17 +178,20 @@ const DentalHero = () => {
 
             {/* Main Content */}
             <main className="main-content">
-                <div className="text-section">
-                    <h1 className="main-title">
-                        Tu sonrisa es lo primordial, ¡Sonríe!
+                <div className={`text-section ${isLoaded ? 'loaded' : ''}`}>
+                    <h1 className={`main-title ${isLoaded ? 'animate-in' : ''}`}>
+                        <span className="title-line">Tu sonrisa es lo primordial,</span>
+                        <span className="title-highlight">¡Sonríe!</span>
                     </h1>
-                    <p className="subtitle">
+                    <p className={`subtitle ${isLoaded ? 'animate-in' : ''}`}>
                         Nosotros te ayudaremos a tener ese cambio dental que necesitas en tu vida.
                     </p>
-                    <button className="cta-button">¡Haz una cita!</button>
+                    <button className={`cta-button ${isLoaded ? 'animate-in' : ''}`}>
+                        ¡Haz una cita!
+                    </button>
                 </div>
 
-                <div className="image-section">
+                <div className={`image-section ${isLoaded ? 'loaded' : ''}`}>
                     <div className="before-after-container">
                         <div className="comparison-image">
                             <div className="image-split">
@@ -209,9 +221,6 @@ const DentalHero = () => {
                     </div>
                 </div>
             </main>
-
-            {/* Scroll to top button */}
-            <button className="scroll-top">↑</button>
 
             {/* Image Indicators */}
             <div className="image-indicators">
