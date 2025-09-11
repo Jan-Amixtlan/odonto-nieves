@@ -129,11 +129,6 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
             <div className="title-section">
                 <div className="title-container">
                     <h1 className="page-title">{title}</h1>
-                    <div className="title-decoration">
-                        <div className="decoration-line"></div>
-                        <div className="decoration-dot"></div>
-                        <div className="decoration-line"></div>
-                    </div>
                 </div>
             </div>
 
