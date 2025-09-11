@@ -111,7 +111,7 @@
     color: var(--gris-texto);
     text-align: center;
     margin: 0;
-    padding: 20px 15px 15px;
+    padding: 15px 15px 10px;
     line-height: 1.3;
     position: relative;
     z-index: 2;
@@ -121,6 +121,37 @@
 .service-all-card:hover .service-all-title {
     color: var(--turquesa-principal);
     transform: translateY(-3px);
+}
+
+.schedule-appointment-btn {
+    background: linear-gradient(135deg, var(--turquesa-principal) 0%, var(--verde-esmeralda) 100%);
+    color: var(--blanco-puro);
+    border: none;
+    padding: 12px 24px;
+    margin: 10px 15px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.schedule-appointment-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 8px 25px rgba(32, 178, 170, 0.4),
+        0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--turquesa-oscuro) 0%, var(--turquesa-principal) 100%);
+}
+
+.schedule-appointment-btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
 }
 
 .all-image-container {

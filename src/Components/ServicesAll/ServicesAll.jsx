@@ -89,8 +89,6 @@ const ServicesAll = () => {
                     {services.map((service) => (
                         <div key={service.id} className="service-all-card">
                             <div className="all-card-content">
-                                <h3 className="service-all-title">{service.title}</h3>
-
                                 <div className="all-image-container">
                                     <img
                                         src={service.image}
@@ -106,6 +104,12 @@ const ServicesAll = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                                <h3 className="service-all-title">{service.title}</h3>
+                                
+                                <button className="schedule-appointment-btn">
+                                    Agendar cita
+                                </button>
 
                                 <div className="all-card-footer">
                                     <span className="all-brand-logo">On</span>
