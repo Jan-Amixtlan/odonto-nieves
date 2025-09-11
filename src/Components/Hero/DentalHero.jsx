@@ -108,7 +108,7 @@ const DentalHero = () => {
                     <a href="/">Inicio</a>
                     <a href="/about">Sobre Mi</a>
                     <a href="/services">Servicios</a>
-                    <a href="#galeria">Galería</a>
+                    <a href="/galery">Galería</a>
                     <a href="#contactanos">Contáctanos</a>
                 </nav>
 

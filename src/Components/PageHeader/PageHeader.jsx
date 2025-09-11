@@ -20,7 +20,7 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
         { name: 'Inicio', href: '/', id: 'inicio' },
         { name: 'Sobre Mi', href: '/about', id: 'sobre-mi' },
         { name: 'Servicios', href: '/services', id: 'services' },
-        { name: 'Galería', href: '#galeria', id: 'galeria' },
+        { name: 'Galería', href: '/galery', id: 'galeria' },
         { name: 'Contáctanos', href: '#contactanos', id: 'contactanos' }
     ];
 
@@ -31,6 +31,8 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
             navigate('/about');
         } else if (id === 'services') {
             navigate('/services');
+        } else if (id === 'galeria') {
+            navigate('/galery');    
         } else {
             // Para navegación interna con anchors o SPA, puedes usar scroll o router
             const anchor = document.querySelector(href);
