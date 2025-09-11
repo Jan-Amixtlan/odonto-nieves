@@ -1,12 +1,13 @@
 import Footer from "../Components/Footer/Footer";
 import PageHeader from "../Components/PageHeader/PageHeader";
+import QualityGallery from "../Components/QualityGallery/QualityGallery";
 
 const GaleryScreen = () => {
     return (
         <div>
             <PageHeader title="Galería" currentPage="galeria" />
-            <h1>Galería</h1>
-
+            <QualityGallery />
+           
             {/* Aquí iría el contenido de la galería */}
             <Footer />
         </div>
