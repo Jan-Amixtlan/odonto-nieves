@@ -15,7 +15,7 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
     }, []);
 
     const navigationItems = [
-        { name: 'Inicio', href: '#inicio', id: 'inicio' },
+        { name: 'Inicio', href: '/', id: 'inicio' },
         { name: 'Sobre Mi', href: '#sobre-mi', id: 'sobre-mi' },
         { name: 'Servicios', href: '#servicios', id: 'servicios' },
         { name: 'Galería', href: '#galeria', id: 'galeria' },
@@ -23,8 +23,15 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
     ];
 
     const handleNavClick = (href, id) => {
-        console.log(`Navegando a: ${href}`);
-        // Aquí implementarías la navegación real
+        if (id === 'inicio') {
+            window.location.href = '/';
+        } else {
+            // Para navegación interna con anchors o SPA, puedes usar scroll o router
+            const anchor = document.querySelector(href);
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     };
 
     const handleWhatsAppClick = () => {
