@@ -33,23 +33,23 @@ const ConsultationCTA = () => {
 
     return (
         <section className="consultation-cta" ref={sectionRef}>
-            <div className="cta-container">
+            <div className="consultation-cta-container">
 
                 {/* Text Content */}
-                <div className="cta-content" ref={textRef}>
+                <div className="consultation-cta-content" ref={textRef}>
                     <div className="content-inner">
 
-                        <h2 className="cta-title">
+                        <h2 className="consultation-cta-title">
                             ¿Te gustaría una consulta?
                         </h2>
 
-                        <p className="cta-description">
+                        <p className="consultation-cta-description">
                             Es muy fácil, puedes llamarnos o
                             hacer directamente <strong>tu cita desde esta misma página</strong>, con
                             gusto te atenderemos.
                         </p>
 
-                        <div className="cta-buttons">
+                        <div className="consultation-cta-buttons">
                             <button
                                 className="appointment-btn primary"
                                 onClick={handleAppointmentClick}
@@ -62,7 +62,7 @@ const ConsultationCTA = () => {
                 </div>
 
                 {/* Image Section */}
-                <div className="cta-image-section" ref={imageRef}>
+                <div className="consultation-cta-image-section" ref={imageRef}>
                     <div className="image-container">
                         <img
                             src="ConsultationCTA.jpg"
