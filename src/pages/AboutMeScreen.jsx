@@ -3,12 +3,13 @@ import Footer from "../Components/Footer/Footer";
 import DoctorBio from "../Components/DoctorBio/DoctorBio";
 import ValuesSection from "../Components/ValuesSection/ValuesSection";
 import OpinionsClients from "../Components/OpinionsClients/OpinionsClients";
+import PageHeader from "../Components/PageHeader/PageHeader";
 
 const AboutMeScreen = () => {
     return (
         <>
-            <h1>About Me</h1>
-            
+        
+            <PageHeader/>
             <DoctorBio />
             <ValuesSection />
             <OpinionsClients />
