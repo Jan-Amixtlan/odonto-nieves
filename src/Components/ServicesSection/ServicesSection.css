@@ -86,7 +86,7 @@
 }
 
 .service-card:hover {
-    transform: translateY(-15px) rotateX(5deg) scale(1.02);
+    transform: translateY(-15px) scale(1.02);
     box-shadow: 
         0 25px 60px rgba(32, 178, 170, 0.2),
         0 15px 35px rgba(0, 0, 0, 0.1),
@@ -503,10 +503,10 @@
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(-15px) rotateX(5deg) scale(1.02);
+        transform: translateY(-15px) scale(1.02);
     }
     50% {
-        transform: translateY(-20px) rotateX(5deg) scale(1.02);
+        transform: translateY(-20px) scale(1.02);
     }
 }
 
@@ -545,10 +545,6 @@
     animation: shimmer 1.5s ease-in-out;
 }
 
-/* Animación flotante sutil */
-.service-card:hover {
-    animation: float 2s ease-in-out infinite;
-}
 
 @keyframes curtainClose {
     0% {
@@ -630,10 +626,6 @@
     animation: shimmer 1.5s ease-in-out;
 }
 
-/* Animación flotante sutil */
-.service-card:hover {
-    animation: float 2s ease-in-out infinite;
-}
 
 /* Interacción táctil para dispositivos móviles */
 @media (hover: none) and (pointer: coarse) {
