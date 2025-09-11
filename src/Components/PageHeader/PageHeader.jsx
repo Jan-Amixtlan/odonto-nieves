@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PageHeader.css';
 
 const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,15 +18,19 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
 
     const navigationItems = [
         { name: 'Inicio', href: '/', id: 'inicio' },
-        { name: 'Sobre Mi', href: '#sobre-mi', id: 'sobre-mi' },
-        { name: 'Servicios', href: '#servicios', id: 'servicios' },
+        { name: 'Sobre Mi', href: '/about', id: 'sobre-mi' },
+        { name: 'Servicios', href: '/services', id: 'services' },
         { name: 'Galería', href: '#galeria', id: 'galeria' },
         { name: 'Contáctanos', href: '#contactanos', id: 'contactanos' }
     ];
 
     const handleNavClick = (href, id) => {
         if (id === 'inicio') {
-            window.location.href = '/';
+            navigate('/');
+        } else if (id === 'sobre-mi') {
+            navigate('/about');
+        } else if (id === 'services') {
+            navigate('/services');
         } else {
             // Para navegación interna con anchors o SPA, puedes usar scroll o router
             const anchor = document.querySelector(href);

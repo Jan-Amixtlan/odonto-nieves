@@ -107,7 +107,7 @@ const DentalHero = () => {
                 <nav className="navigation desktop-nav">
                     <a href="/">Inicio</a>
                     <a href="/about">Sobre Mi</a>
-                    <a href="#servicios">Servicios</a>
+                    <a href="/services">Servicios</a>
                     <a href="#galeria">Galería</a>
                     <a href="#contactanos">Contáctanos</a>
                 </nav>
@@ -165,7 +165,7 @@ const DentalHero = () => {
                         <span className="nav-icon">👨‍⚕️</span>
                         Sobre Mi
                     </a>
-                    <a href="#servicios" onClick={closeMenu}>
+                    <a href="#services" onClick={closeMenu}>
                         <span className="nav-icon">🦷</span>
                         Servicios
                     </a>
