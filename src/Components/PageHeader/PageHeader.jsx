@@ -32,7 +32,9 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
         } else if (id === 'services') {
             navigate('/services');
         } else if (id === 'galeria') {
-            navigate('/galery');    
+            navigate('/galery');
+        } else if (id === 'contactanos') {
+            navigate('/contact');
         } else {
             // Para navegación interna con anchors o SPA, puedes usar scroll o router
             const anchor = document.querySelector(href);

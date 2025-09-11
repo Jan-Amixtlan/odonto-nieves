@@ -5,6 +5,7 @@ import HomeScreen from './pages/HomeScreen';
 import AboutMeScreen from './pages/AboutMeScreen';
 import ServicesScreen from './pages/ServicesScreen';
 import GaleryScreen from './pages/GaleryScreen';  
+import ContactScreen from './pages/ContactScreen';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about" element={<AboutMeScreen />} />
         <Route path="/services" element={<ServicesScreen />} />
         <Route path="/galery" element={<GaleryScreen />} />
+        <Route path="/contact" element={<ContactScreen />} />
       </Routes>
     </BrowserRouter>
   );
