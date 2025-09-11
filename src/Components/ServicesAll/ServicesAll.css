@@ -1,0 +1,714 @@
+/* Paleta de colores Odontonieves */
+:root {
+    --turquesa-principal: #20B2AA;
+    --verde-esmeralda: #00D4AA;
+    --blanco-puro: #FFFFFF;
+    --azul-claro: #4FD1C7;
+    --turquesa-oscuro: #1A9B96;
+    --gris-texto: #2C3E50;
+    --gris-claro: #7F8C8D;
+    --gris-muy-claro: #BDC3C7;
+    --fondo-claro: #F8F9FA;
+}
+
+.services-all-section {
+    background-color: var(--fondo-claro);
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.services-all-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+/* Header de la sección */
+.services-all-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.all-section-tag {
+    color: var(--turquesa-principal);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.services-all-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--gris-texto);
+    line-height: 1.3;
+    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Grid de servicios */
+.services-all-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.service-all-card {
+    background-color: var(--blanco-puro);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.service-all-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(32, 178, 170, 0.05) 0%,
+            rgba(79, 209, 199, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 18px;
+    z-index: 1;
+}
+
+.service-all-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow:
+        0 25px 60px rgba(32, 178, 170, 0.2),
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(32, 178, 170, 0.1);
+    border-color: rgba(32, 178, 170, 0.3);
+}
+
+.service-all-card:hover::before {
+    opacity: 1;
+}
+
+.all-card-content {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-all-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gris-texto);
+    text-align: center;
+    margin: 0;
+    padding: 20px 15px 15px;
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.service-all-card:hover .service-all-title {
+    color: var(--turquesa-principal);
+    transform: translateY(-3px);
+}
+
+.all-image-container {
+    flex-grow: 1;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.service-all-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: brightness(1) saturate(1) contrast(1.1);
+}
+
+.service-all-card:hover .service-all-image {
+    transform: scale(1.08);
+    filter: brightness(0.9) saturate(1.3) contrast(1.2);
+}
+
+/* Overlay con información detallada */
+.service-all-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(32, 178, 170, 0.75) 0%,
+            rgba(79, 209, 199, 0.75) 50%,
+            rgba(0, 212, 170, 0.75) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+
+    /* Animación tipo cortina que cubre toda la imagen */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: none;
+}
+
+.service-all-card:hover .service-all-overlay {
+    animation: curtainOpen 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.service-all-card:not(:hover) .service-all-overlay {
+    animation: curtainClose 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.all-overlay-content {
+    text-align: center;
+    padding: 20px 15px;
+    color: var(--blanco-puro);
+    max-width: 90%;
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-all-card:hover .all-overlay-content {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.all-overlay-question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--blanco-puro);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+}
+
+.service-all-card:hover .all-overlay-question {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.all-overlay-answer {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--blanco-puro);
+    margin: 0;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.service-all-card:hover .all-overlay-answer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.all-card-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.service-all-card:hover .all-card-footer {
+    transform: translateY(-3px);
+    border-top-color: rgba(32, 178, 170, 0.2);
+}
+
+.all-brand-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--gris-claro);
+    font-family: 'Georgia', serif;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.all-brand-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--turquesa-principal), var(--verde-esmeralda));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.service-all-card:hover .all-brand-logo {
+    color: var(--turquesa-principal);
+    transform: scale(1.05);
+}
+
+.service-all-card:hover .all-brand-logo::after {
+    width: 100%;
+}
+
+/* Botón ver más servicios */
+.services-all-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-more-btn {
+    background-color: var(--turquesa-principal);
+    color: var(--blanco-puro);
+    border: none;
+    padding: 18px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
+}
+
+.view-all-more-btn:hover {
+    background-color: var(--turquesa-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.4);
+}
+
+.view-all-more-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services-all-container {
+        padding: 0 40px;
+    }
+
+    .services-all-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .services-all-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-all-section {
+        padding: 60px 0;
+    }
+
+    .services-all-container {
+        padding: 0 20px;
+    }
+
+    .services-all-header {
+        margin-bottom: 50px;
+    }
+
+    .services-all-title {
+        font-size: 32px;
+    }
+
+    .services-all-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .service-all-title {
+        font-size: 20px;
+        padding: 25px 15px 15px;
+    }
+
+    .all-image-container {
+        padding: 0 15px;
+    }
+
+    .service-all-image {
+        height: 200px;
+    }
+
+    /* Ajustes para overlay en móvil */
+    .service-all-overlay {
+        margin: 0 15px;
+    }
+
+    .all-overlay-content {
+        padding: 20px 15px;
+    }
+
+    .all-overlay-question {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .all-overlay-answer {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .view-all-more-btn {
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-all-container {
+        padding: 0 15px;
+    }
+
+    .services-all-title {
+        font-size: 28px;
+    }
+
+    .all-section-tag {
+        font-size: 16px;
+    }
+
+    .service-all-title {
+        font-size: 18px;
+        padding: 20px 10px 10px;
+    }
+
+    .service-all-image {
+        height: 180px;
+    }
+
+    .all-brand-logo {
+        font-size: 20px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes curtainOpen {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        opacity: 0;
+    }
+
+    30% {
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+        opacity: 0.7;
+    }
+
+    60% {
+        clip-path: polygon(0 0, 100% 0, 100% 60%, 0 60%);
+        opacity: 0.85;
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+    }
+}
+
+@keyframes curtainClose {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+    }
+
+    40% {
+        clip-path: polygon(0 0, 100% 0, 100% 60%, 0 60%);
+        opacity: 0.85;
+    }
+
+    70% {
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+        opacity: 0.7;
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        opacity: 0;
+    }
+}
+
+@keyframes contentFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes textSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(-15px) scale(1.02);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.02);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Efecto shimmer en hover */
+.service-all-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.service-all-card:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out;
+}
+
+
+@keyframes curtainClose {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+        opacity: 0.7;
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        opacity: 0;
+    }
+}
+
+@keyframes contentFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes textSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service-all-card {
+    animation: fadeInUp 0.6s ease forwards;
+    perspective: 1000px;
+}
+
+.service-all-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.service-all-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-all-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Efecto shimmer en hover */
+.service-all-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.service-all-card:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out;
+}
+
+
+/* Interacción táctil para dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+    .service-all-card:active .service-all-overlay {
+        animation: curtainOpen 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    .service-all-card:active .all-overlay-content {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    .service-all-card:active .all-overlay-question {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .service-all-card:active .all-overlay-answer {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .service-all-card:active .service-all-image {
+        transform: scale(1.08);
+        filter: brightness(0.9) saturate(1.3) contrast(1.2);
+    }
+
+    .service-all-card:active .service-all-title {
+        color: var(--turquesa-principal);
+        transform: translateY(-3px);
+    }
+
+    .service-all-card:active .all-brand-logo {
+        color: var(--turquesa-principal);
+        transform: scale(1.05);
+    }
+
+    .service-all-card:active .all-brand-logo::after {
+        width: 100%;
+    }
+}
+
+/* Mejoras de rendimiento */
+.service-all-card,
+.service-all-image,
+.service-all-overlay,
+.service-all-title,
+.all-brand-logo {
+    will-change: transform, opacity;
+}
+
+/* Reducir animaciones para usuarios que las prefieren reducidas */
+@media (prefers-reduced-motion: reduce) {
+
+    .service-all-card,
+    .service-all-image,
+    .service-all-overlay,
+    .all-overlay-content,
+    .all-overlay-question,
+    .all-overlay-answer,
+    .service-all-title,
+    .all-brand-logo {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .service-all-card:hover {
+        transform: translateY(-5px);
+    }
+}
