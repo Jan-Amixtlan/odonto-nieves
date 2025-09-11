@@ -1,11 +1,12 @@
 import ContactFooter from "../Components/ContactFooter/ContactFooter";
 import Footer from "../Components/Footer/Footer";
+import DoctorBio from "../Components/DoctorBio/DoctorBio";
 
 const AboutMeScreen = () => {
     return (
         <>
             <h1>About Me</h1>
-            <p>This is the about me section.</p>
+            <DoctorBio />
             <ContactFooter />
             <Footer />
         </>
