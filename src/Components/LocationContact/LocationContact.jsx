@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LocationContact.css';
 
 const LocationContact = () => {
+    const [hoveredElement, setHoveredElement] = useState(null);
+
     const handleGoogleMaps = () => {
         window.open('https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Providencia+Guadalajara', '_blank');
     };
@@ -11,103 +13,111 @@ const LocationContact = () => {
     };
 
     const handleMessage = () => {
-        window.open('https://wa.me/523317015391?text=Hola,%20me%20interesa%20agendar%20una%20cita', '_blank');
+        window.open('https://wa.me/523317015391?text=Buenos%20días,%20solicito%20información%20sobre%20su%20consultorio', '_blank');
     };
 
     return (
-        <div className="location-container">
-            <div className="content-wrapper">
-
-                {/* Sección izquierda - Contenido principal */}
-                <div className="left-section">
-                    <div className="main-content">
-                        <h1 className="main-title">
-                            ¡Estamos<br />
-                            aquí, para<br />
-                            ti!
-                        </h1>
-                        <div className="title-divider"></div>
-
-                        <div className="subtitle-section">
-                            <h2 className="subtitle">
-                                ¿Donde estes,<br />
-                                estaremos!
-                            </h2>
-                            <p className="description">
-                                Localízanos fácilmente en nuestro consultorio.
-                            </p>
-                        </div>
-
-                        <button onClick={handleMessage} className="message-btn">
-                            <span>Enviar mensaje</span>
-                            <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
+        <div className="elegant-location-container">
+            <div className="location-card">
+                <div className="card-header">
+                    <h1 className="elegant-title">¡Estamos aquí, para ti!</h1>
+                    <h2 className="subtitle-elegant">¿Donde estes, estaremos!</h2>
                 </div>
+                
+                <div className="card-content">
+                    <div className="info-section">
+                        <p className="description-elegant">
+                            Localízanos fácilmente en nuestro consultorio dental de vanguardia.
+                            Nos enorgullece ofrecer servicios de la más alta calidad en un
+                            ambiente de excelencia y distinción profesional.
+                        </p>
+                    </div>
 
-                {/* Sección derecha - Mapa 3D y ubicación */}
-                <div className="right-section">
+                    <div className="visual-section">
+                        {/* Mapa Elegante */}
+                        <div className="map-showcase">
+                            <div className="map-container">
+                                <div className="map-base">
+                                    <div className="street-network">
+                                        <div className="street street-horizontal"></div>
+                                        <div className="street street-horizontal"></div>
+                                        <div className="street street-horizontal"></div>
+                                        <div className="street street-vertical"></div>
+                                        <div className="street street-vertical"></div>
+                                        <div className="street street-vertical"></div>
+                                    </div>
+                                    <div className="landmarks">
+                                        <div className="landmark"></div>
+                                        <div className="landmark"></div>
+                                        <div className="landmark"></div>
+                                    </div>
+                                </div>
 
-                    {/* Mapa 3D con pin */}
-                    <div className="map-container">
-                        <div className="map-base">
-                            <div className="map-surface">
-                                {/* Líneas del mapa */}
-                                <div className="map-line horizontal line-1"></div>
-                                <div className="map-line horizontal line-2"></div>
-                                <div className="map-line horizontal line-3"></div>
-                                <div className="map-line vertical line-4"></div>
-                                <div className="map-line vertical line-5"></div>
-                                <div className="map-line vertical line-6"></div>
-
-                                {/* Áreas sombreadas */}
-                                <div className="map-shadow shadow-1"></div>
-                                <div className="map-shadow shadow-2"></div>
-                            </div>
-                        </div>
-
-                        {/* Pin de ubicación 3D */}
-                        <div className="location-pin">
-                            <div className="pin-shadow"></div>
-                            <div className="pin-body">
-                                <div className="pin-inner">
-                                    <div className="pin-center"></div>
+                                {/* Pin de Ubicación Elegante */}
+                                <div className="location-pin">
+                                    <div className="pin-shadow"></div>
+                                    <div className="pin-element">
+                                        <div className="pin-body">
+                                            <div className="pin-center">
+                                                <div className="pin-dot"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Panel de ubicación */}
-                    <div className="location-panel">
-                        <h3 className="panel-title">Ubicación</h3>
-                        <div className="panel-divider"></div>
+                        <div className="location-details">
+                            <div className="address-section">
+                                <h4 className="address-title">Dirección</h4>
+                                <p className="address-content">
+                                    Av. Manuel Acuña #2755 Piso 2<br />
+                                    Col. Providencia, C.P. 44680<br />
+                                    Guadalajara, Jalisco
+                                </p>
+                            </div>
 
-                        <div className="navigation-buttons">
-                            <button onClick={handleGoogleMaps} className="nav-btn">
-                                <span>Google Maps</span>
-                                <svg className="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                            <div className="navigation-menu">
+                                <button
+                                    className="nav-item"
+                                    onClick={handleGoogleMaps}
+                                    onMouseEnter={() => setHoveredElement('maps')}
+                                    onMouseLeave={() => setHoveredElement(null)}
+                                >
+                                    <div className="nav-content">
+                                        <span className="nav-icon">🗺</span>
+                                        <span>Google Maps</span>
+                                    </div>
+                                    <span className="nav-arrow">→</span>
+                                </button>
 
-                            <button onClick={handleWaze} className="nav-btn">
-                                <span>Waze</span>
-                                <svg className="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                                <button
+                                    className="nav-item"
+                                    onClick={handleWaze}
+                                    onMouseEnter={() => setHoveredElement('waze')}
+                                    onMouseLeave={() => setHoveredElement(null)}
+                                >
+                                    <div className="nav-content">
+                                        <span className="nav-icon">🧭</span>
+                                        <span>Waze</span>
+                                    </div>
+                                    <span className="nav-arrow">→</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Elementos decorativos de fondo */}
-            <div className="background-decorations">
-                <div className="decoration-circle circle-1"></div>
-                <div className="decoration-circle circle-2"></div>
-                <div className="decoration-circle circle-3"></div>
+                    <div className="card-footer">
+                        <button
+                            className="cta-button"
+                            onClick={handleMessage}
+                            onMouseEnter={() => setHoveredElement('cta')}
+                            onMouseLeave={() => setHoveredElement(null)}
+                        >
+                            <span className="button-text">Contactar</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
