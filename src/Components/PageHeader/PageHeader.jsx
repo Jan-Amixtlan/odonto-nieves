@@ -52,6 +52,35 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    // Cerrar menú con tecla Escape
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        };
+
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, [isMenuOpen]);
+
+    // Prevenir scroll cuando el menú está abierto
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     return (
         <header className={`page-header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="header-container">
@@ -102,11 +131,6 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
                     <button
                         className="mobile-menu-toggle"
                         onClick={toggleMenu}
-                        onTouchEnd={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            toggleMenu();
-                        }}
                         aria-label="Toggle menu"
                     >
                         <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
@@ -116,35 +140,56 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
 
                 </div>
 
+                {/* Mobile Navigation Overlay */}
+                {isMenuOpen && (
+                    <div className="mobile-nav-overlay" onClick={closeMenu}></div>
+                )}
+
                 {/* Mobile Navigation */}
-                <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+                <nav className={`mobile-navigation ${isMenuOpen ? 'open' : ''}`}>
+                    <div className="mobile-nav-header">
+                        <div className="mobile-nav-logo">On</div>
+                        <button 
+                            className="mobile-close-btn"
+                            onClick={closeMenu}
+                            aria-label="Cerrar menú"
+                        >
+                            ×
+                        </button>
+                    </div>
                     <div className="mobile-nav-content">
                         {navigationItems.map((item) => (
-                            <button
+                            <a
                                 key={item.id}
+                                href={item.href}
                                 className={`mobile-nav-link ${currentPage === item.id ? 'active' : ''}`}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    e.stopPropagation();
                                     handleNavClick(item.href, item.id);
-                                    setIsMenuOpen(false);
+                                    closeMenu();
                                 }}
-                                onTouchStart={(e) => {
-                                    e.stopPropagation();
-                                }}
-                                type="button"
                             >
+                                <span className="nav-icon">
+                                    {item.id === 'inicio' && '🏠'}
+                                    {item.id === 'sobre-mi' && '👨‍⚕️'}
+                                    {item.id === 'services' && '🦷'}
+                                    {item.id === 'galeria' && '📸'}
+                                    {item.id === 'contactanos' && '📞'}
+                                </span>
                                 {item.name}
-                            </button>
+                            </a>
                         ))}
+                    </div>
+                    <div className="mobile-nav-footer">
                         <button
                             className="mobile-whatsapp-btn"
                             onClick={() => {
                                 handleWhatsAppClick();
-                                setIsMenuOpen(false);
+                                closeMenu();
                             }}
                         >
-                            💬 Enviar WhatsApp
+                            <span>📱</span>
+                            Enviar WhatsApp
                         </button>
                     </div>
                 </nav>

@@ -16,7 +16,7 @@
     padding: 120px 0;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: auto;
 }
 
 .testimonials-container {
@@ -452,14 +452,21 @@
 @media (max-width: 768px) {
     .testimonials-section {
         padding: 80px 0;
+        min-height: auto;
+        display: block;
+        visibility: visible;
     }
 
     .testimonials-container {
         padding: 0 20px;
+        display: block;
+        visibility: visible;
     }
 
     .testimonials-header {
         margin-bottom: 60px;
+        opacity: 1;
+        transform: none;
     }
 
     .testimonials-title {
@@ -469,10 +476,16 @@
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 25px;
+        display: block;
     }
 
     .testimonial-card {
         padding: 30px;
+        opacity: 1;
+        transform: none;
+        display: block;
+        visibility: visible;
+        margin-bottom: 25px;
     }
 
     .testimonial-text p {

@@ -4,24 +4,44 @@ import './QualityGallery.css';
 const QualityGallery = () => {
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
+        // Detectar si es móvil
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        // Si es móvil, mostrar inmediatamente
+        if (window.innerWidth <= 768) {
+            setIsVisible(true);
+        } else {
+            // Para desktop, usar IntersectionObserver
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setIsVisible(true);
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            if (sectionRef.current) {
+                observer.observe(sectionRef.current);
+            }
+
+            return () => {
+                observer.disconnect();
+                window.removeEventListener('resize', checkMobile);
+            };
         }
 
-        return () => observer.disconnect();
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     const galleryPairs = [

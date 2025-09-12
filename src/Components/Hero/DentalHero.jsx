@@ -157,23 +157,23 @@ const DentalHero = () => {
                     </button>
                 </div>
                 <div className="mobile-nav-content">
-                    <a href="#inicio" onClick={closeMenu}>
+                    <a href="/" onClick={closeMenu}>
                         <span className="nav-icon">🏠</span>
                         Inicio
                     </a>
-                    <a href="#sobre-mi" onClick={closeMenu}>
+                    <a href="/about" onClick={closeMenu}>
                         <span className="nav-icon">👨‍⚕️</span>
                         Sobre Mi
                     </a>
-                    <a href="#services" onClick={closeMenu}>
+                    <a href="/services" onClick={closeMenu}>
                         <span className="nav-icon">🦷</span>
                         Servicios
                     </a>
-                    <a href="#galeria" onClick={closeMenu}>
+                    <a href="/galery" onClick={closeMenu}>
                         <span className="nav-icon">📸</span>
                         Galería
                     </a>
-                    <a href="#contactanos" onClick={closeMenu}>
+                    <a href="/contact" onClick={closeMenu}>
                         <span className="nav-icon">📞</span>
                         Contáctanos
                     </a>
