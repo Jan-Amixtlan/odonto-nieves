@@ -185,6 +185,9 @@
     padding: 8px;
     border-radius: 6px;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+    touch-action: manipulation;
+    user-select: none;
 }
 
 .mobile-menu-toggle:hover {
@@ -242,7 +245,8 @@
 
 .mobile-nav-link {
     color: var(--blanco-puro);
-    text-decoration: none;
+    background: none;
+    border: none;
     font-size: 18px;
     font-weight: 500;
     padding: 15px 20px;
@@ -250,6 +254,12 @@
     transition: all 0.3s ease;
     opacity: 0.9;
     text-align: center;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+    touch-action: manipulation;
+    user-select: none;
 }
 
 .mobile-nav-link:hover,

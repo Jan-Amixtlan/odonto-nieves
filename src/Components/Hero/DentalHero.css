@@ -481,7 +481,7 @@ html, body {
     transform: translateY(0);
 }
 
-.cta-button {
+.dental-hero .cta-button {
     background-color: var(--turquesa-oscuro);
     color: var(--blanco-puro);
     border: none;
@@ -500,12 +500,12 @@ html, body {
     overflow: hidden;
 }
 
-.cta-button.animate-in {
+.dental-hero .cta-button.animate-in {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
-.cta-button::before {
+.dental-hero .cta-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -516,11 +516,11 @@ html, body {
     transition: left 0.5s ease;
 }
 
-.cta-button:hover::before {
+.dental-hero .cta-button:hover::before {
     left: 100%;
 }
 
-.cta-button:hover {
+.dental-hero .cta-button:hover {
     background-color: var(--verde-esmeralda);
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -981,7 +981,7 @@ html, body {
         transition-delay: 0.3s;
     }
 
-    .cta-button {
+    .dental-hero .cta-button {
         padding: 15px 30px;
         font-size: 16px;
         transition-delay: 0.45s;
@@ -1124,7 +1124,7 @@ html, body {
         padding: 0 5px;
     }
 
-    .cta-button {
+    .dental-hero .cta-button {
         padding: 12px 25px;
         font-size: 14px;
     }
@@ -1220,7 +1220,7 @@ html, body {
         padding: 2px 3px;
     }
 
-    .cta-button {
+    .dental-hero .cta-button {
         padding: 10px 20px;
         font-size: 13px;
     }

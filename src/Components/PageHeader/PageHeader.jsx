@@ -102,6 +102,11 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
                     <button
                         className="mobile-menu-toggle"
                         onClick={toggleMenu}
+                        onTouchEnd={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleMenu();
+                        }}
                         aria-label="Toggle menu"
                     >
                         <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
@@ -115,18 +120,22 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
                 <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
                     <div className="mobile-nav-content">
                         {navigationItems.map((item) => (
-                            <a
+                            <button
                                 key={item.id}
-                                href={item.href}
                                 className={`mobile-nav-link ${currentPage === item.id ? 'active' : ''}`}
                                 onClick={(e) => {
                                     e.preventDefault();
+                                    e.stopPropagation();
                                     handleNavClick(item.href, item.id);
                                     setIsMenuOpen(false);
                                 }}
+                                onTouchStart={(e) => {
+                                    e.stopPropagation();
+                                }}
+                                type="button"
                             >
                                 {item.name}
-                            </a>
+                            </button>
                         ))}
                         <button
                             className="mobile-whatsapp-btn"
