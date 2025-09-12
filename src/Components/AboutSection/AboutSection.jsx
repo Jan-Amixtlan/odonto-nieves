@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AboutSection.css';
 
 const AboutSection = () => {
+    const navigate = useNavigate();
+    const handleReadMore = () => {
+        navigate('/about');
+    };
     return (
         <section className="about-section">
             <div className="about-container">
@@ -33,7 +38,7 @@ const AboutSection = () => {
                         </p>
                     </div>
 
-                    <button className="read-more-btn">
+                    <button className="read-more-btn" onClick={handleReadMore}>
                         Leer Más
                     </button>
                 </div>

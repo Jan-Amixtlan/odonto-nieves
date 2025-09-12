@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ServicesSection.css';
 
 const ServicesSection = () => {
+    const navigate = useNavigate();
+    const handleViewMore = () => {
+        navigate('/services');
+    };
     const services = [
         {
             id: 1,
@@ -83,7 +88,7 @@ const ServicesSection = () => {
 
                 {/* Botón ver más servicios */}
                 <div className="services-footer">
-                    <button className="view-more-btn">
+                    <button className="view-more-btn" onClick={handleViewMore}>
                         Ver más servicios
                     </button>
                 </div>

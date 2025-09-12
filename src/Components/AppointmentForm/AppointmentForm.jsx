@@ -147,8 +147,8 @@ const AppointmentForm = () => {
         alert('¡Cita solicitada exitosamente!');
     };
 
-    return (
-        <section className="appointment-section">
+        return (
+            <section className="appointment-section" id="appointment-form">
             {/* Imágenes de fondo con transiciones */}
             <div className="background-images">
                 {backgroundImages.map((image, index) => (

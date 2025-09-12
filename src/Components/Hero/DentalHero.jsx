@@ -196,7 +196,12 @@ const DentalHero = () => {
                     <p className={`subtitle ${isLoaded ? 'animate-in' : ''}`}>
                         Nosotros te ayudaremos a tener ese cambio dental que necesitas en tu vida.
                     </p>
-                    <button className={`cta-button ${isLoaded ? 'animate-in' : ''}`}>
+                    <button className={`cta-button ${isLoaded ? 'animate-in' : ''}`} onClick={() => {
+                        const formSection = document.getElementById('appointment-form');
+                        if (formSection) {
+                            formSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }}>
                         ¡Haz una cita!
                     </button>
                 </div>

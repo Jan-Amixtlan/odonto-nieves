@@ -32,8 +32,10 @@ const DoctorProfile = () => {
     ];
 
     const handleAppointmentClick = () => {
-        // Aquí puedes agregar la lógica para agendar cita
-        console.log('Redirigiendo a agendar cita...');
+        const formSection = document.getElementById('appointment-form');
+        if (formSection) {
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
