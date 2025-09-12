@@ -1,0 +1,477 @@
+/* LocationContact.css - Estilos aislados para el componente */
+
+/* Aislamiento de estilos - solo aplica dentro del componente */
+.location-container,
+.location-container * {
+    /* Reset específico solo para este componente */
+    box-sizing: border-box;
+}
+
+.location-container {
+    /* Reseteo de herencias que podrían venir de otros componentes */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.5;
+    color: initial;
+    text-align: initial;
+    
+    /* Estilos del container */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6FA8DC 0%, #8FA2D9 25%, #B39CD0 50%, #D7A3C5 75%, #E8A5C0 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.location-container .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Sección Izquierda */
+.location-container .left-section {
+    color: white;
+}
+
+.location-container .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.location-container .main-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-container .title-divider {
+    width: 80px;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    margin: 1rem 0;
+}
+
+.location-container .subtitle-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.location-container .subtitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.location-container .description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.location-container .message-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.location-container .message-btn:hover {
+    background: white;
+    color: #6FA8DC;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.location-container .arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.location-container .message-btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* Sección Derecha */
+.location-container .right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Mapa 3D */
+.location-container .map-container {
+    position: relative;
+    width: 350px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-container .map-base {
+    position: relative;
+    transform: perspective(600px) rotateX(20deg) rotateY(-10deg);
+    transform-style: preserve-3d;
+}
+
+.location-container .map-surface {
+    width: 280px;
+    height: 200px;
+    background: linear-gradient(145deg, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 100%);
+    border-radius: 16px;
+    position: relative;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    transform: translateZ(0);
+}
+
+.location-container .map-line {
+    position: absolute;
+    background: rgba(150, 150, 150, 0.4);
+}
+
+.location-container .map-line.horizontal {
+    height: 1px;
+    left: 20px;
+    right: 20px;
+}
+
+.location-container .map-line.vertical {
+    width: 1px;
+    top: 20px;
+    bottom: 20px;
+}
+
+.location-container .line-1 {
+    top: 40px;
+}
+
+.location-container .line-2 {
+    top: 80px;
+}
+
+.location-container .line-3 {
+    top: 120px;
+}
+
+.location-container .line-4 {
+    left: 60px;
+}
+
+.location-container .line-5 {
+    left: 120px;
+}
+
+.location-container .line-6 {
+    left: 180px;
+}
+
+.location-container .map-shadow {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.location-container .shadow-1 {
+    width: 60px;
+    height: 40px;
+    top: 60px;
+    left: 40px;
+}
+
+.location-container .shadow-2 {
+    width: 80px;
+    height: 30px;
+    top: 120px;
+    right: 40px;
+}
+
+/* Pin de Ubicación 3D */
+.location-container .location-pin {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.location-container .pin-shadow {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 16px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.location-container .pin-body {
+    width: 48px;
+    height: 64px;
+    position: relative;
+    cursor: pointer;
+    animation: pinFloat 3s ease-in-out infinite;
+}
+
+@keyframes pinFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.location-container .pin-body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff4757 0%, #ff3742 50%, #e63946 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow:
+        0 4px 12px rgba(255, 71, 87, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.location-container .pin-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.location-container .pin-center {
+    width: 16px;
+    height: 16px;
+    background: #ff4757;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Panel de Ubicación */
+.location-container .location-panel {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.location-container .panel-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem 0;
+    text-align: left;
+}
+
+.location-container .panel-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 2rem;
+}
+
+.location-container .navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.location-container .nav-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.location-container .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.location-container .nav-arrow {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.location-container .nav-btn:hover .nav-arrow {
+    transform: translateX(4px);
+}
+
+/* Elementos decorativos de fondo */
+.location-container .background-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.location-container .decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+}
+
+.location-container .circle-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 10%;
+    left: 5%;
+}
+
+.location-container .circle-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(147, 51, 234, 0.2);
+    bottom: 10%;
+    right: 5%;
+}
+
+.location-container .circle-3 {
+    width: 250px;
+    height: 250px;
+    background: rgba(59, 130, 246, 0.2);
+    top: 50%;
+    left: 20%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .location-container .content-wrapper {
+        gap: 2rem;
+    }
+
+    .location-container .main-title {
+        font-size: 3rem;
+    }
+
+    .location-container .subtitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-container {
+        padding: 1rem;
+    }
+
+    .location-container .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .location-container .main-title {
+        font-size: 2.5rem;
+    }
+
+    .location-container .subtitle {
+        font-size: 1.8rem;
+    }
+
+    .location-container .map-container {
+        width: 300px;
+        height: 240px;
+    }
+
+    .location-container .map-surface {
+        width: 240px;
+        height: 170px;
+    }
+
+    .location-container .location-panel {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-container .main-title {
+        font-size: 2rem;
+    }
+
+    .location-container .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .location-container .description {
+        font-size: 1rem;
+    }
+
+    .location-container .map-container {
+        width: 250px;
+        height: 200px;
+    }
+
+    .location-container .map-surface {
+        width: 200px;
+        height: 140px;
+    }
+
+    .location-container .location-panel {
+        padding: 1.5rem;
+    }
+
+    .location-container .panel-title {
+        font-size: 1.5rem;
+    }
+}
