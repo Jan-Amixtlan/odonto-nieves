@@ -217,7 +217,8 @@
 
 /* Sección de Contacto */
 .contact-info-section {
-    background: linear-gradient(135deg, var(--turquesa-principal) 0%, var(--azul-claro) 100%);
+    background: linear-gradient(135deg, rgba(32,178,170,0.65) 0%, rgba(79,209,199,0.65) 100%),
+        url('/FormularioFondo2.jpg') center center/cover no-repeat;
     color: var(--blanco-puro);
     padding: 40px 30px;
     display: flex;
@@ -225,6 +226,8 @@
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-content {
@@ -266,15 +269,15 @@
     align-items: flex-start;
     gap: 15px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
 }
 
 .contact-item:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     transform: translateX(5px);
 }
 
@@ -346,16 +349,16 @@
     align-items: center;
     gap: 15px;
     padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
     justify-content: center;
 }
 
 .social-item:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     transform: scale(1.05);
 }
 
