@@ -107,7 +107,17 @@ const ServicesAll = () => {
 
                                 <h3 className="service-all-title">{service.title}</h3>
                                 
-                                <button className="schedule-appointment-btn">
+                                <button className="schedule-appointment-btn" onClick={() => {
+                                    if (window.location.pathname === '/' || window.location.pathname === '/') {
+                                        const formSection = document.getElementById('appointment-form');
+                                        if (formSection) {
+                                            formSection.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    } else {
+                                        localStorage.setItem('scrollToAppointment', 'true');
+                                        window.location.href = '/';
+                                    }
+                                }}>
                                     Agendar cita
                                 </button>
 
