@@ -336,6 +336,29 @@
     transform: translateY(0);
 }
 
+/* Animación para resaltar el servicio de Blanqueamiento Dental */
+.highlight-service {
+  animation: highlight-blanqueamiento 1s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 0 4px #00D4AA, 0 0 16px 8px #4FD1C7;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes highlight-blanqueamiento {
+  0% {
+    box-shadow: 0 0 0 8px #00D4AA, 0 0 32px 16px #4FD1C7;
+    background: #e0fff7;
+  }
+  60% {
+    box-shadow: 0 0 0 4px #00D4AA, 0 0 16px 8px #4FD1C7;
+    background: #e0fff7;
+  }
+  100% {
+    box-shadow: none;
+    background: none;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .services-all-container {

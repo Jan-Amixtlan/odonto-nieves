@@ -77,7 +77,80 @@ const Footer = () => {
                         <ul className="footer-links">
                             {services.map((service, index) => (
                                 <li key={index}>
-                                    <span className="footer-link">{service}</span>
+                                    {service === 'Blanqueamiento Dental' ? (
+                                        <a
+                                            href="/services-all#blanqueamiento-dental"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.setItem('scrollToService', 'blanqueamiento-dental');
+                                                window.location.href = '/services-all';
+                                            }}
+                                        >
+                                            {service}
+                                        </a>
+                                    ) : service === 'Odontología preventiva' ? (
+                                        <a
+                                            href="/services-all#odontologia-preventiva"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.setItem('scrollToService', 'odontologia-preventiva');
+                                                window.location.href = '/services-all';
+                                            }}
+                                        >
+                                            {service}
+                                        </a>
+                                    ) : service === 'Prótesis total' ? (
+                                        <a
+                                            href="/services-all#protesis-total"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.setItem('scrollToService', 'protesis-total');
+                                                window.location.href = '/services-all';
+                                            }}
+                                        >
+                                            {service}
+                                        </a>
+                                    ) : service === 'Implante dental' ? (
+                                        <a
+                                            href="/services-all#implante-dental"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.setItem('scrollToService', 'implante-dental');
+                                                window.location.href = '/services-all';
+                                            }}
+                                        >
+                                            {service}
+                                        </a>
+                                    ) : service === 'Carillas dentales' ? (
+                                        <a
+                                            href="/services-all#carillas-dentales"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.setItem('scrollToService', 'carillas-dentales');
+                                                window.location.href = '/services';
+                                            }}
+                                        >
+                                            {service}
+                                        </a>
+                                    ) : service === 'Otros servicios' ? (
+                                        <a
+                                            href="/services-all"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                window.location.href = '/services';
+                                            }}
+                                        >
+                                            {service}
+                                        </a>
+                                    ) : (
+                                        <span className="footer-link">{service}</span>
+                                    )}
                                 </li>
                             ))}
                         </ul>

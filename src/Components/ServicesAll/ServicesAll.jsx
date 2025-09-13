@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './ServicesAll.css';
 
 const ServicesAll = () => {
@@ -72,6 +72,69 @@ const ServicesAll = () => {
 
     ];
 
+    // Referencias y animaciones para servicios destacados
+    const blanqueamientoRef = useRef(null);
+    const preventivaRef = useRef(null);
+    const protesisRef = useRef(null);
+    const implanteRef = useRef(null);
+    const carillasRef = useRef(null);
+    const [highlightBlanqueamiento, setHighlightBlanqueamiento] = useState(false);
+    const [highlightPreventiva, setHighlightPreventiva] = useState(false);
+    const [highlightProtesis, setHighlightProtesis] = useState(false);
+    const [highlightImplante, setHighlightImplante] = useState(false);
+    const [highlightCarillas, setHighlightCarillas] = useState(false);
+
+    // Scroll automático y animación si hay marca en localStorage
+    useEffect(() => {
+        const scrollTo = localStorage.getItem('scrollToService');
+        if (scrollTo === 'blanqueamiento-dental') {
+            setTimeout(() => {
+                if (blanqueamientoRef.current) {
+                    blanqueamientoRef.current.scrollIntoView({ behavior: 'smooth' });
+                    setHighlightBlanqueamiento(true);
+                    setTimeout(() => setHighlightBlanqueamiento(false), 1000);
+                }
+                localStorage.removeItem('scrollToService');
+            }, 300);
+        } else if (scrollTo === 'odontologia-preventiva') {
+            setTimeout(() => {
+                if (preventivaRef.current) {
+                    preventivaRef.current.scrollIntoView({ behavior: 'smooth' });
+                    setHighlightPreventiva(true);
+                    setTimeout(() => setHighlightPreventiva(false), 1000);
+                }
+                localStorage.removeItem('scrollToService');
+            }, 300);
+        } else if (scrollTo === 'protesis-total') {
+            setTimeout(() => {
+                if (protesisRef.current) {
+                    protesisRef.current.scrollIntoView({ behavior: 'smooth' });
+                    setHighlightProtesis(true);
+                    setTimeout(() => setHighlightProtesis(false), 1000);
+                }
+                localStorage.removeItem('scrollToService');
+            }, 300);
+        } else if (scrollTo === 'implante-dental') {
+            setTimeout(() => {
+                if (implanteRef.current) {
+                    implanteRef.current.scrollIntoView({ behavior: 'smooth' });
+                    setHighlightImplante(true);
+                    setTimeout(() => setHighlightImplante(false), 1000);
+                }
+                localStorage.removeItem('scrollToService');
+            }, 300);
+        } else if (scrollTo === 'carillas-dentales') {
+            setTimeout(() => {
+                if (carillasRef.current) {
+                    carillasRef.current.scrollIntoView({ behavior: 'smooth' });
+                    setHighlightCarillas(true);
+                    setTimeout(() => setHighlightCarillas(false), 1000);
+                }
+                localStorage.removeItem('scrollToService');
+            }, 300);
+        }
+    }, []);
+
     return (
         <section className="services-all-section">
             <div className="services-all-container">
@@ -87,7 +150,23 @@ const ServicesAll = () => {
                 {/* Grid de servicios */}
                 <div className="services-all-grid">
                     {services.map((service) => (
-                        <div key={service.id} className="service-all-card">
+                        <div
+                            key={service.id}
+                            className={`service-all-card${service.title === 'Blanqueamiento Dental' && highlightBlanqueamiento ? ' highlight-service' : ''}${service.title === 'Odontología Preventiva' && highlightPreventiva ? ' highlight-service' : ''}${service.title === 'Prótesis Total' && highlightProtesis ? ' highlight-service' : ''}${service.title === 'Implante Dental' && highlightImplante ? ' highlight-service' : ''}${service.title === 'Carillas Dentales' && highlightCarillas ? ' highlight-service' : ''}`}
+                            ref={
+                                service.title === 'Blanqueamiento Dental'
+                                    ? blanqueamientoRef
+                                    : service.title === 'Odontología Preventiva'
+                                    ? preventivaRef
+                                    : service.title === 'Prótesis Total'
+                                    ? protesisRef
+                                    : service.title === 'Implante Dental'
+                                    ? implanteRef
+                                    : service.title === 'Carillas Dentales'
+                                    ? carillasRef
+                                    : undefined
+                            }
+                        >
                             <div className="all-card-content">
                                 <div className="all-image-container">
                                     <img
