@@ -76,25 +76,25 @@ const AppointmentContact = () => {
 
     const contactInfo = [
         {
-            icon: "💬",
+            icon: <img src="/social.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             title: "WhatsApp:",
             info: "(33) 1701 5391",
             action: () => window.open('https://wa.me/5213317015391', '_blank')
         },
         {
-            icon: "📞",
+            icon: <img src="/llamada-telefonica.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             title: "Consultorio:",
             info: "(33) 3616 4250 Telefono 2: (33)3616 2586",
             action: () => window.open('tel:3336164250', '_blank')
         },
         {
-            icon: "📧",
+             icon: <img src="/correo-electronico.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             title: "",
             info: "blancanieves@odontonieves.com",
             action: () => window.open('mailto:blancanieves@odontonieves.com', '_blank')
         },
         {
-            icon: "📍",
+             icon: <img src="/marcador-de-posicion.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             title: "",
             info: "Av. Manuel Acuña #2755 Piso 2 Col. Providencia, C.P. 44680 Guadalajara, Jalisco.",
             action: () => window.open('https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Guadalajara', '_blank')
@@ -105,13 +105,13 @@ const AppointmentContact = () => {
         {
             name: "Instagram",
             url: "instagram.com/odontonieves/",
-            icon: "📷",
+             icon: <img src="/instagram.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             action: () => window.open('https://instagram.com/odontonieves/', '_blank')
         },
         {
             name: "Facebook",
             url: "facebook.com/odontonieves/",
-            icon: "👍",
+            icon: <img src="/facebook.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             action: () => window.open('https://facebook.com/odontonieves/', '_blank')
         }
     ];
@@ -308,7 +308,7 @@ const AppointmentContact = () => {
 
                             <div className="social-icon-container">
                                 <div className="social-graphic">
-                                    <div className="like-icon">👍</div>
+                                    <img className="like-icon" src="/Contact.png" alt="Like" style={{ width: '40px', height: '40px' }} />
                                 </div>
                             </div>
 
