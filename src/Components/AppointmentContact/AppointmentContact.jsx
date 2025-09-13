@@ -308,7 +308,7 @@ const AppointmentContact = () => {
 
                             <div className="social-icon-container">
                                 <div className="social-graphic">
-                                    <img className="like-icon" src="/Contact.png" alt="Like" style={{ width: '40px', height: '40px' }} />
+                                    <img className="like-icon" src="/Contact.png" alt="Like" style={{ width: '80px', height: '80px' }} />
                                 </div>
                             </div>
 
