@@ -124,7 +124,7 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
                         className="whatsapp-btn"
                         onClick={handleWhatsAppClick}
                     >
-                        💬 Enviar WhatsApp
+                        Enviar WhatsApp
                     </button>
 
                     {/* Mobile Menu Toggle */}
@@ -188,7 +188,7 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
                                 closeMenu();
                             }}
                         >
-                            <span>📱</span>
+                            <span></span>
                             Enviar WhatsApp
                         </button>
                     </div>

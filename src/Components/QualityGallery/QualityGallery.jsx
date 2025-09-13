@@ -247,18 +247,7 @@ const QualityGallery = () => {
                     ))}
                 </div>
 
-                {/* Call to Action */}
-                <div className={`gallery-cta ${isVisible ? 'animate-in' : ''}`}>
-                    <p className="cta-text">
-                        ¿Te gustaría ver más casos de éxito? Agenda tu consulta y descubre cómo podemos transformar tu sonrisa.
-                    </p>
-                    <button
-                        className="cta-button"
-                        onClick={() => console.log('Navegando a galería completa')}
-                    >
-                        Ver más casos
-                    </button>
-                </div>
+            
 
             </div>
         </section>

@@ -140,7 +140,6 @@ const DentalHero = () => {
 
                     <div className="header-actions">
                         <button className="whatsapp-btn">
-                            <span className="whatsapp-icon">📱</span>
                             <span className="whatsapp-text">WhatsApp</span>
                         </button>
                         <div className="contact-icons">
@@ -193,7 +192,7 @@ const DentalHero = () => {
                 </div>
                 <div className="mobile-nav-footer">
                     <button className="mobile-whatsapp-btn" onClick={closeMenu}>
-                        <span>📱</span>
+                        <span></span>
                         Enviar WhatsApp
                     </button>
                 </div>
