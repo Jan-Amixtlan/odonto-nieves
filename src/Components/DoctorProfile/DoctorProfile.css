@@ -229,28 +229,30 @@
 }
 
 /* CTA Button */
-.appointment-cta {
-    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
-    color: var(--blanco-puro);
-    border: none;
-    padding: 18px 40px;
-    border-radius: 50px;
-    font-size: 18px;
+.doctor-profile-section .appointment-cta {
+    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda)) !important;
+    color: var(--blanco-puro) !important;
+    border: none !important;
+    padding: 18px 24px;
+    border-radius: 40px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 10px;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(32, 178, 170, 0.3);
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3) !important;
     position: relative;
     overflow: hidden;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: 0.8s;
+    width: auto;
 }
 
-.appointment-cta::before {
+.doctor-profile-section .appointment-cta::before {
     content: '';
     position: absolute;
     top: 0;
@@ -261,20 +263,26 @@
     transition: left 0.5s ease;
 }
 
-.appointment-cta:hover::before {
+.doctor-profile-section .appointment-cta:hover::before {
     left: 100%;
 }
 
-.appointment-cta:hover {
+.doctor-profile-section .appointment-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(32, 178, 170, 0.4);
+    box-shadow: 0 12px 35px rgba(32, 178, 170, 0.4) !important;
+}
+
+.doctor-profile-section .appointment-cta .cta-text {
+    color: var(--blanco-puro) !important;
+    text-align: center;
+    flex: 1;
 }
 
 .cta-arrow {
     transition: transform 0.3s ease;
 }
 
-.appointment-cta:hover .cta-arrow {
+.doctor-profile-section .appointment-cta:hover .cta-arrow {
     transform: translateX(5px);
 }
 
@@ -518,7 +526,7 @@
         font-size: 18px;
     }
 
-    .appointment-cta {
+    .doctor-profile-section .appointment-cta {
         padding: 16px 32px;
         font-size: 16px;
     }
@@ -571,7 +579,7 @@
         font-size: 16px;
     }
 
-    .appointment-cta {
+    .doctor-profile-section .appointment-cta {
         padding: 14px 24px;
         font-size: 14px;
         gap: 10px;
