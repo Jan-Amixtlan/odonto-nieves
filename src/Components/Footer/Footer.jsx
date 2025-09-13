@@ -56,16 +56,63 @@ const Footer = () => {
                         <ul className="footer-links">
                             {quickAccess.map((item, index) => (
                                 <li key={index}>
-                                    <a
-                                        href={item.href}
-                                        className={`footer-link ${item.isPhone ? 'phone-link' : ''}`}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            handleLinkClick(item.href, item.isPhone);
-                                        }}
-                                    >
-                                        {item.name}
-                                    </a>
+                                    {item.name === 'Tratamientos' ? (
+                                        <a
+                                            href="/services-all"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                window.location.href = '/services';
+                                            }}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : item.name === 'Galería' ? (
+                                        <a
+                                            href="/#galeria"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                window.location.href = '/galery';
+                                            }}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : item.name === 'Contáctanos' ? (
+                                        <a
+                                            href="/#contacto"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                window.location.href = '/contact';
+                                            }}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : item.name === 'Haz una cita' ? (
+                                        <a
+                                            href="/"
+                                            className="footer-link"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.setItem('scrollToAppointment', 'true');
+                                                window.location.href = '/';
+                                            }}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : (
+                                        <a
+                                            href={item.href}
+                                            className={`footer-link ${item.isPhone ? 'phone-link' : ''}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                handleLinkClick(item.href, item.isPhone);
+                                            }}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    )}
                                 </li>
                             ))}
                         </ul>
