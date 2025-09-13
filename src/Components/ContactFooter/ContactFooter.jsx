@@ -97,7 +97,7 @@ const ContactFooter = () => {
                             </svg>
                         </div>
                         <div className="contact-content">
-                            <h3 className="contact-title">Llámanos WhatsApp:</h3>
+                            <h3 className="contact-title whatsapp-title">Llámanos WhatsApp:</h3>
                             <p
                                 className="contact-text clickable"
                                 onClick={() => handleWhatsAppClick('33 1701 5391')}
@@ -115,7 +115,7 @@ const ContactFooter = () => {
                             </svg>
                         </div>
                         <div className="contact-content">
-                            <h3 className="contact-title">Consultorio:</h3>
+                            <h3 className="contact-title phone-title">Consultorio:</h3>
                             <p
                                 className="contact-text clickable"
                                 onClick={() => handlePhoneClick('33 3616 4250')}
