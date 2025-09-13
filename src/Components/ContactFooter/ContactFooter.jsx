@@ -65,7 +65,7 @@ const ContactFooter = () => {
     };
 
     const handleLocationClick = () => {
-        window.open('https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Guadalajara');
+        window.open('https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Piso+2+Col.+Providencia,+C.P.+44680+Guadalajara,+Jalisco');
     };
 
     return (

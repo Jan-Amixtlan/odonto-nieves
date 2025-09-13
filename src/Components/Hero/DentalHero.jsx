@@ -113,7 +113,7 @@ const DentalHero = () => {
             {/* Header */}
             <header className="header">
                 <div className="header-left">
-                    <div className="logo">On</div>
+                    <a href="/" className="logo">On</a>
                 </div>
                 
                 {/* Desktop Navigation */}
@@ -149,9 +149,15 @@ const DentalHero = () => {
                             <span className="whatsapp-text">WhatsApp</span>
                         </a>
                         <div className="contact-icons">
-                            <span title="Teléfono">�</span>
-                            <span title="Email">✉️</span>
-                            <span title="Ubicación">�</span>
+                            <a href="tel:+523317015391" title="Llamar">
+                                <img src="/telefono.svg" alt="Teléfono" title="Teléfono" className="icon-svg" style={{ width: '25px', height: '25px', filter: 'invert(1) brightness(2)' }} />
+                            </a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@odontonieves.com" title="Email">
+                                <img src="/email.svg" alt="Email" title="Email" className="icon-svg" style={{ width: '25px', height: '25px', filter: 'invert(1) brightness(2)' }} />
+                            </a>
+                            <a href="https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Piso+2+Col.+Providencia,+C.P.+44680+Guadalajara,+Jalisco" title="Ubicación">
+                                <img src="/gps.svg" alt="Ubicación" title="Ubicación" className="icon-svg" style={{ width: '25px', height: '25px', filter: 'invert(1) brightness(2)' }} />
+                            </a>
                         </div>
                     </div>
                 </div>
