@@ -58,7 +58,7 @@ const Footer = () => {
                                 <li key={index}>
                                     {item.name === 'Tratamientos' ? (
                                         <a
-                                            href="/services-all"
+                                            href="/services"
                                             className="footer-link"
                                             onClick={e => {
                                                 e.preventDefault();
@@ -131,7 +131,7 @@ const Footer = () => {
                                             onClick={e => {
                                                 e.preventDefault();
                                                 localStorage.setItem('scrollToService', 'blanqueamiento-dental');
-                                                window.location.href = '/services-all';
+                                                window.location.href = '/services';
                                             }}
                                         >
                                             {service}
@@ -143,7 +143,7 @@ const Footer = () => {
                                             onClick={e => {
                                                 e.preventDefault();
                                                 localStorage.setItem('scrollToService', 'odontologia-preventiva');
-                                                window.location.href = '/services-all';
+                                                window.location.href = '/services';
                                             }}
                                         >
                                             {service}
@@ -155,7 +155,7 @@ const Footer = () => {
                                             onClick={e => {
                                                 e.preventDefault();
                                                 localStorage.setItem('scrollToService', 'protesis-total');
-                                                window.location.href = '/services-all';
+                                                window.location.href = '/services';
                                             }}
                                         >
                                             {service}
@@ -167,7 +167,7 @@ const Footer = () => {
                                             onClick={e => {
                                                 e.preventDefault();
                                                 localStorage.setItem('scrollToService', 'implante-dental');
-                                                window.location.href = '/services-all';
+                                                window.location.href = '/services';
                                             }}
                                         >
                                             {service}
@@ -186,7 +186,7 @@ const Footer = () => {
                                         </a>
                                     ) : service === 'Otros servicios' ? (
                                         <a
-                                            href="/services-all"
+                                            href="/services"
                                             className="footer-link"
                                             onClick={e => {
                                                 e.preventDefault();

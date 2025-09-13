@@ -139,9 +139,15 @@ const DentalHero = () => {
                     </button>
 
                     <div className="header-actions">
-                        <button className="whatsapp-btn">
+                        <a
+                            className="whatsapp-btn"
+                            href="https://web.whatsapp.com/send?phone=5213317015391&text=%C2%A1Hola!%20Estoy%20interesado%2Fa%20en%20agendar%20una%20cita%20o%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios%20dentales.%20%F0%9F%98%8A%20%F0%9F%91%8B"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Enviar WhatsApp"
+                        >
                             <span className="whatsapp-text">WhatsApp</span>
-                        </button>
+                        </a>
                         <div className="contact-icons">
                             <span title="Teléfono">�</span>
                             <span title="Email">✉️</span>
