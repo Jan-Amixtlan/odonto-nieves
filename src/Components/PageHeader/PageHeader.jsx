@@ -88,9 +88,23 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
                 {/* Top Bar with Contact Info */}
                 <div className="header-top">
                     <div className="contact-info">
-                        <span className="contact-item">📱 (33) 1701-5391</span>
-                        <span className="contact-item">📧 contacto@odontonieves.com</span>
-                        <span className="contact-item">📍 Guadalajara, Jal.</span>
+                        <a className="contact-item" href="tel:+523317015391">📱 (33) 1701-5391</a>
+                        <a
+                            className="contact-item"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@odontonieves.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            📧 contacto@odontonieves.com
+                        </a>
+                        <a
+                            className="contact-item"
+                            href="https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Piso+2+Col.+Providencia,+C.P.+44680+Guadalajara,+Jalisco"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            📍Ubicación
+                        </a>
                     </div>
                 </div>
 
