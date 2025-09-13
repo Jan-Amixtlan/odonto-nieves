@@ -26,8 +26,8 @@ html, body {
 
 .dental-hero {
     width: 100vw;
-    height: 85vh;
-    min-height: 85vh;
+    height: 90vh;
+    min-height: 90vh;
     background: linear-gradient(135deg, 
         var(--azul-claro) 0%,           /* Color turquesa original como base */
         var(--azul-marino) 30%,         /* Azul marino */
@@ -86,6 +86,7 @@ html, body {
     animation: slideDown 0.8s ease forwards;
     animation-delay: 0.2s;
     height: 35px;
+    top: -30px;
 }
 
 @keyframes slideDown {
@@ -107,7 +108,7 @@ html, body {
 }
 
 .dental-hero .logo {
-    font-size: 24px;
+    font-size: 38px;
     font-weight: bold;
     color: var(--blanco-puro) !important;
     font-family: 'Georgia', serif;
@@ -402,12 +403,16 @@ html, body {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
-    padding: 10px 50px 20px 50px;
-    gap: 20px;
+    padding: 10px 20px 20px 20px;
+    gap: 40px;
     flex: 1;
     margin-top: -40px;
     position: relative;
     z-index: 5;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -40px;
 }
 
 .dental-hero .text-section {
@@ -547,7 +552,8 @@ html, body {
 .before-after-container {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
+    
 }
 
 .comparison-image {
