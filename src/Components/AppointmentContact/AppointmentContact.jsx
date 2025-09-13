@@ -84,7 +84,7 @@ const AppointmentContact = () => {
         {
             icon: <img src="/llamada-telefonica.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             title: "Consultorio:",
-            info: "(33) 3616 4250 Telefono 2: (33)3616 2586",
+            info: <span><span>(33) 3616 4250</span><br /><span style={{ fontSize: '0.95em', color: '#faf8f8ff' }}>Teléfono 2: (33) 3616 2586</span></span>,
             action: () => window.open('tel:3336164250', '_blank')
         },
         {
@@ -105,13 +105,13 @@ const AppointmentContact = () => {
         {
             name: "Instagram",
             url: "instagram.com/odontonieves/",
-             icon: <img src="/instagram.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
+             icon: <img src="/instagram.png" alt="Instagram" className="social-icon-img" />,
             action: () => window.open('https://instagram.com/odontonieves/', '_blank')
         },
         {
             name: "Facebook",
             url: "facebook.com/odontonieves/",
-            icon: <img src="/facebook.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
+            icon: <img src="/facebook.png" alt="Facebook" className="social-icon-img" />,
             action: () => window.open('https://facebook.com/odontonieves/', '_blank')
         }
     ];
@@ -297,7 +297,7 @@ const AppointmentContact = () => {
                                     <span className="contact-icon">{contact.icon}</span>
                                     <div className="contact-details">
                                         {contact.title && <span className="contact-type">{contact.title}</span>}
-                                        <span className="contact-value">{contact.info}</span>
+                                        <span className="contact-value" style={{ fontSize: '1.25em', fontWeight: 400 }}>{contact.info}</span>
                                     </div>
                                 </div>
                             ))}
@@ -308,7 +308,7 @@ const AppointmentContact = () => {
 
                             <div className="social-icon-container">
                                 <div className="social-graphic">
-                                    <img className="like-icon" src="/Contact.png" alt="Like" style={{ width: '80px', height: '80px' }} />
+                                    <img className="like-icon" src="/Contact.png" alt="Like" style={{ width: '90px', height: '90px' }} />
                                 </div>
                             </div>
 
@@ -320,7 +320,7 @@ const AppointmentContact = () => {
                                         onClick={social.action}
                                     >
                                         <span className="social-icon">{social.icon}</span>
-                                        <span className="social-url">{social.url}</span>
+                                        <span className="social-url" style={{ fontSize: '1.15em', fontWeight: 500 }}>{social.url}</span>
                                     </div>
                                 ))}
                             </div>
