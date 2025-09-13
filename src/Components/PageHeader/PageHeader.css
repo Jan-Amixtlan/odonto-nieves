@@ -505,7 +505,7 @@
     }
 
     .whatsapp-btn {
-        display: none;
+        display: none !important;
     }
 
     .mobile-menu-toggle {
@@ -554,6 +554,10 @@
 
     .logo {
         font-size: 32px;
+    }
+
+    .whatsapp-btn {
+        display: none !important;
     }
 
     .page-title {
