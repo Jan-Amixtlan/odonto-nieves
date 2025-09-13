@@ -4,8 +4,15 @@ import './ConsultationGalery.css';
 const ConsultationGalery = () => {
 
     const handleAppointmentClick = () => {
-        console.log('Redirigiendo a agendar cita...');
-        // Aquí implementarías la navegación a la página de citas
+        if (window.location.pathname === '/' || window.location.pathname === '/') {
+            const formSection = document.getElementById('appointment-form');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            localStorage.setItem('scrollToAppointment', 'true');
+            window.location.href = '/';
+        }
     };
 
 

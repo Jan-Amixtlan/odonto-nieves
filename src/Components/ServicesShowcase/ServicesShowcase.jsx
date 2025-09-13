@@ -44,8 +44,15 @@ const ServicesShowcase = () => {
     ];
 
     const handleAppointmentClick = (serviceName) => {
-        console.log(`Agendando cita para: ${serviceName}`);
-        // Aquí implementarías la navegación a la página de citas
+        if (window.location.pathname === '/' || window.location.pathname === '/') {
+            const formSection = document.getElementById('appointment-form');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            localStorage.setItem('scrollToAppointment', 'true');
+            window.location.href = '/';
+        }
     };
 
     return (
