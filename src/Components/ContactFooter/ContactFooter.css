@@ -64,10 +64,10 @@
 
 /* Contact Grid */
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 30px;
-    align-items: start;
     background: none !important;
     border: none !important;
     border-radius: 0 !important;
@@ -79,6 +79,7 @@
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    flex: 1;
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
     background: none !important;
@@ -403,12 +404,7 @@
     }
 
     .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 35px;
-    }
-
-    .cta-section {
-        grid-column: span 2;
+        gap: 20px;
     }
 }
 
@@ -437,13 +433,10 @@
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
-    .cta-section {
-        grid-column: span 1;
-    }
 
     .contact-item {
         gap: 15px;
@@ -511,6 +504,7 @@
 
     .contact-grid {
         gap: 25px;
+        flex-direction: column;
     }
 
     .contact-item {
