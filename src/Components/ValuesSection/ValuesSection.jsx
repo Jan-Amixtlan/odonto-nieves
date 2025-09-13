@@ -96,8 +96,15 @@ const ValuesSection = () => {
     ];
 
     const handleAppointmentClick = () => {
-        console.log('Redirigiendo a agendar cita...');
-        // Aquí implementarías la navegación a la página de citas
+        if (window.location.pathname === '/' || window.location.pathname === '/agendar') {
+            const formSection = document.getElementById('appointment-form');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            localStorage.setItem('scrollToAppointment', 'true');
+            window.location.href = '/';
+        }
     };
 
     const renderContent = (content) => {

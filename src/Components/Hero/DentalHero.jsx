@@ -78,6 +78,19 @@ const DentalHero = () => {
         };
     }, [isMenuOpen]);
 
+    // Scroll automático al formulario si venimos de otra ruta
+    useEffect(() => {
+        if ((window.location.pathname === '/' || window.location.pathname === '/agendar') && localStorage.getItem('scrollToAppointment') === 'true') {
+            setTimeout(() => {
+                const formSection = document.getElementById('appointment-form');
+                if (formSection) {
+                    formSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                localStorage.removeItem('scrollToAppointment');
+            }, 300);
+        }
+    }, []);
+
     return (
         <div className="dental-hero">
             {/* Dynamic Background Images */}
@@ -197,9 +210,14 @@ const DentalHero = () => {
                         Nosotros te ayudaremos a tener ese cambio dental que necesitas en tu vida.
                     </p>
                     <button className={`cta-button ${isLoaded ? 'animate-in' : ''}`} onClick={() => {
-                        const formSection = document.getElementById('appointment-form');
-                        if (formSection) {
-                            formSection.scrollIntoView({ behavior: 'smooth' });
+                        if (window.location.pathname === '/' || window.location.pathname === '/agendar') {
+                            const formSection = document.getElementById('appointment-form');
+                            if (formSection) {
+                                formSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        } else {
+                            localStorage.setItem('scrollToAppointment', 'true');
+                            window.location.href = '/agendar';
                         }
                     }}>
                         ¡Haz una cita!
