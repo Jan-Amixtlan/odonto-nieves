@@ -15,6 +15,16 @@ const OpinionsClients = () => {
         checkMobile();
         window.addEventListener('resize', checkMobile);
 
+        // Scroll automático si hay hash
+        if (window.location.hash === '#opinions-clients') {
+            setTimeout(() => {
+                const el = document.getElementById('opinions-clients');
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 200);
+        }
+
         // Si es móvil, mostrar inmediatamente
         if (window.innerWidth <= 768) {
             setIsVisible(true);
@@ -116,7 +126,7 @@ const OpinionsClients = () => {
     };
 
     return (
-        <section className="testimonials-section" ref={sectionRef}>
+        <section className="testimonials-section" ref={sectionRef} id="opinions-clients">
             <div className="testimonials-container">
 
                 {/* Header */}

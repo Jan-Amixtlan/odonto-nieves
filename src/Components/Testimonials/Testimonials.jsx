@@ -74,7 +74,6 @@ const Testimonials = () => {
     return (
         <section className="testimonials-section" ref={sectionRef}>
             <div className="testimonials-container">
-
                 {/* Header */}
                 <div className={`testimonials-header ${isVisible ? 'animate-in' : ''}`}>
                     <h2 className="testimonials-title">
@@ -86,7 +85,6 @@ const Testimonials = () => {
                         <div className="decoration-dot"></div>
                     </div>
                 </div>
-
                 {/* Testimonials Grid */}
                 <div className="testimonials-grid">
                     {testimonials.map((testimonial, index) => (
@@ -96,7 +94,6 @@ const Testimonials = () => {
                             style={{ animationDelay: `${index * 0.2}s` }}
                         >
                             <div className="card-content">
-
                                 {/* Quote Icon */}
                                 <div className="quote-icon">
                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
@@ -106,17 +103,14 @@ const Testimonials = () => {
                                         />
                                     </svg>
                                 </div>
-
                                 {/* Testimonial Text */}
                                 <div className="testimonial-text">
                                     <p>{testimonial.text}</p>
                                 </div>
-
                                 {/* Rating */}
                                 <div className="rating">
                                     {renderStars(testimonial.rating)}
                                 </div>
-
                                 {/* Client Info */}
                                 <div className="client-info">
                                     <div className="avatar-container">
@@ -132,22 +126,41 @@ const Testimonials = () => {
                                         <p className="client-title">{testimonial.title}</p>
                                     </div>
                                 </div>
-
                             </div>
-
                             {/* Hover Effect Background */}
                             <div className="card-hover-bg"></div>
                         </div>
                     ))}
                 </div>
-
+                {/* Botón Leer más */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
+                    <a
+                        href="/about#opinions-clients"
+                        className="read-more-btn"
+                        style={{ textDecoration: 'none', textAlign: 'center' }}
+                        onClick={e => {
+                            e.preventDefault();
+                            if (window.location.pathname === '/about') {
+                                setTimeout(() => {
+                                    const el = document.getElementById('opinions-clients');
+                                    if (el) {
+                                        el.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }, 100);
+                            } else {
+                                window.location.href = '/about#opinions-clients';
+                            }
+                        }}
+                    >
+                        Leer más
+                    </a>
+                </div>
                 {/* Decorative Elements */}
                 <div className="decorative-background">
                     <div className="bg-circle circle-1"></div>
                     <div className="bg-circle circle-2"></div>
                     <div className="bg-circle circle-3"></div>
                 </div>
-
             </div>
         </section>
     );
