@@ -152,7 +152,7 @@ const Testimonials = () => {
                             }
                         }}
                     >
-                        Leer más
+                        Lo que dicen nuestros clientes
                     </a>
                 </div>
                 {/* Decorative Elements */}
