@@ -88,7 +88,7 @@ const AppointmentContact = () => {
             action: () => window.open('tel:3336164250', '_blank')
         },
         {
-             icon: <img src="/correo-electronico.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
+             icon: <img src="/contacto-correo-electronico.png" alt="WhatsApp" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
             title: "",
             info: "blancanieves@odontonieves.com",
             action: () => window.open('mailto:blancanieves@odontonieves.com', '_blank')
@@ -111,7 +111,7 @@ const AppointmentContact = () => {
         {
             name: "Facebook",
             url: "facebook.com/odontonieves/",
-            icon: <img src="/facebook.png" alt="Facebook" className="social-icon-img" />,
+            icon: <img src="/facebook.png" alt="Facebook" className="social-icon-img" style={{ width: '2.2em', height: '2.2em', verticalAlign: 'middle' }} />,
             action: () => window.open('https://facebook.com/odontonieves/', '_blank')
         }
     ];

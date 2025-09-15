@@ -35,31 +35,34 @@
 }
 
 .social-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
+    width: 48px;
+    height: 48px;
     border: none;
-    background: var(--blanco-puro);
+    background: transparent;
     color: var(--social-color, var(--gris-texto));
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    padding: 0;
 }
 
-.social-icon svg {
+.social-icon svg,
+.social-icon-img {
     width: 32px;
     height: 32px;
     transition: all 0.3s ease;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .social-icon:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background: var(--social-color, var(--blanco-puro));
-    color: var(--blanco-puro);
+    transform: translateY(-3px) scale(1.08);
+    background: transparent;
+    color: var(--social-color, var(--blanco-puro));
+    box-shadow: none;
 }
 
 /* Contact Grid */
