@@ -196,15 +196,16 @@
 /* Eliminar completamente el espacio entre títulos y números de teléfono */
 .whatsapp-title + .contact-text,
 .phone-title + .contact-text {
-    margin-top: -28px !important;
+    margin-top: -35px !important;
     padding-top: 0 !important;
     transform: translateY(-5px) !important;
 }
 
 /* Eliminar espacio entre números de teléfono consecutivos */
 .contact-text + .contact-text {
-    margin-top: -30px !important;
-    transform: translateY(-5px) !important;
+    margin-top: -45px !important;
+    line-height: 1.1 !important;
+    transform: none !important;
 }
 
 .contact-text.clickable {
