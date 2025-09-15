@@ -143,7 +143,9 @@ const ContactFooter = () => {
                                 className="contact-text address clickable"
                                 onClick={handleLocationClick}
                             >
-                                Av. Manuel Acuña #2755 Piso 2 Esq. Rubén Darío, Col. Providencia, 44680 Guadalajara, Jal.
+                                Av. Manuel Acuña #2755<br/>
+                                Piso 2 Esq. Rubén Darío, Col.<br/>
+                                Providencia, 44680 Guadalajara, Jal.
                             </p>
                         </div>
                     </div>
@@ -152,7 +154,8 @@ const ContactFooter = () => {
                     <div className="contact-item cta-section">
                         <div className="cta-content">
                             <h3 className="cta-title">
-                                El cambio que necesitas en tu sonrisa, hecho a tu medida
+                                El cambio que necesitasen tu <br />
+                                 sonrisa, hecho a tu medida
                             </h3>
                             <button
                                 className="appointment-button"
