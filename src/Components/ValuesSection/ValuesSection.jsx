@@ -177,16 +177,7 @@ const ValuesSection = () => {
                     ))}
                 </div>
 
-                {/* Call to Action */}
-                <div className={`values-cta ${isVisible ? 'animate-in' : ''}`}>
-                    <button
-                        className="appointment-btn"
-                        onClick={handleAppointmentClick}
-                    >
-                        <span className="btn-text">Haz tu cita aquí</span>
-                        <div className="btn-shine"></div>
-                    </button>
-                </div>
+               
 
                 {/* Decorative Elements */}
                 <div className="decorative-bg">
