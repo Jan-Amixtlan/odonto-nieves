@@ -19,11 +19,11 @@
 }
 
 .bio-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 50px;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 700px 1fr;
     gap: 80px;
     align-items: center;
 }
@@ -42,46 +42,38 @@
 }
 
 .image-container {
+    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    margin: 0 auto 0 50px;
     position: relative;
-    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(32, 178, 170, 0.15);
     transition: all 0.4s ease;
 }
 
 .image-container:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 80px rgba(32, 178, 170, 0.2);
+    transform: scale(1.02);
 }
 
 .doctor-photo {
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    object-fit: contain;
     display: block;
     transition: transform 0.5s ease;
+    margin: 0 auto;
+    border-radius: 20px;
 }
 
 .image-container:hover .doctor-photo {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .image-border-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 3px solid transparent;
-    background: linear-gradient(135deg, var(--turquesa-principal), var(--verde-esmeralda));
-    background-clip: padding-box;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
+    display: none;
 }
 
-.image-container:hover .image-border-effect {
-    opacity: 0.3;
-}
 
 /* Content Section */
 .doctor-content-section {
@@ -230,7 +222,17 @@
     .bio-container {
         padding: 0 40px;
         gap: 60px;
-        grid-template-columns: 350px 1fr;
+        grid-template-columns: 450px 1fr;
+    }
+
+    .image-container {
+        width: 450px;
+        height: 450px;
+    }
+
+    .doctor-photo {
+        width: 450px;
+        height: 450px;
     }
 
     .main-title {
@@ -252,8 +254,18 @@
 
     .doctor-image-section {
         order: 1;
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 auto;
+    }
+
+    .image-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .doctor-photo {
+        width: 400px;
+        height: 400px;
     }
 
     .doctor-content-section {
@@ -293,11 +305,14 @@
     }
 
     .image-container {
-        border-radius: 20px;
+        width: 350px;
+        height: 350px;
     }
 
-    .image-container {
-        border-radius: 20px;
+    .doctor-photo {
+        width: 350px;
+        height: 350px;
+        border-radius: 15px;
     }
 
     .main-title {
