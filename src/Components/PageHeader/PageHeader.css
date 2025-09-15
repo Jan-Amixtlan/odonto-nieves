@@ -44,11 +44,15 @@
     justify-content: center;
 }
 
+
 .contact-info {
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
+
 
 .contact-item {
     color: rgba(255, 255, 255, 0.95);
@@ -64,6 +68,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .contact-item:hover {
@@ -481,6 +486,16 @@
 
     .header-top {
         padding: 12px 0;
+    }
+
+    .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .contact-item {
+        white-space: normal;
     }
 
     .social-icons {
