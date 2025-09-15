@@ -115,17 +115,16 @@ const DentalHero = () => {
                 <div className="header-left">
                     <a href="/" className="logo">On</a>
                 </div>
-                
-                {/* Desktop Navigation */}
-                <nav className="navigation desktop-nav">
-                    <a href="/">Inicio</a>
-                    <a href="/about">Sobre Mi</a>
-                    <a href="/services">Servicios</a>
-                    <a href="/galery">Galería</a>
-                    <a href="/contact">Contáctanos</a>
-                </nav>
 
                 <div className="header-right">
+                    {/* Desktop Navigation */}
+                    <nav className="navigation desktop-nav">
+                        <a href="/">Inicio</a>
+                        <a href="/about">Sobre Mi</a>
+                        <a href="/services">Servicios</a>
+                        <a href="/galery">Galería</a>
+                        <a href="/contact">Contacto</a>
+                    </nav>
                     {/* Mobile Menu Button */}
                     <button 
                         className="mobile-menu-btn"
@@ -240,15 +239,15 @@ const DentalHero = () => {
                         <div className="comparison-image">
                             <div className="image-split">
                                 <div className={`before-half ${showAfter ? 'reveal' : ''}`}>
-                                    <img 
-                                        src="/Before.png" 
+                                    <img
+                                        src="/Before.png"
                                         alt="Dientes antes del tratamiento"
                                         className="teeth-image before-teeth"
                                     />
                                 </div>
                                 <div className="after-half">
-                                    <img 
-                                        src="/After.png" 
+                                    <img
+                                        src="/After.png"
                                         alt="Dientes después del tratamiento"
                                         className="teeth-image after-teeth"
                                     />
