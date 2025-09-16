@@ -5,6 +5,16 @@ const QualityGallery = () => {
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [showAfter, setShowAfter] = useState(false);
+
+    // Controlar la animación antes/después
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowAfter(prev => !prev);
+        }, 3000); // Cambia cada 3 segundos
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         // Detectar si es móvil
@@ -201,46 +211,38 @@ const QualityGallery = () => {
                             className={`gallery-pair ${isVisible ? 'animate-in' : ''}`}
                             style={{ animationDelay: `${pairIndex * 0.3}s` }}
                         >
-                            {/* Antes Image */}
+                            {/* Comparación Antes/Después */}
                             <div
-                                className={`gallery-item before-item ${isVisible ? 'animate-in' : ''}`}
-                                style={{ animationDelay: `${pairIndex * 0.3 + 0.1}s` }}
-                                onClick={() => handleImageClick(pair.before)}
+                                className={`gallery-item comparison-item ${isVisible ? 'animate-in' : ''}`}
+                                style={{ animationDelay: `${pairIndex * 0.3}s` }}
                             >
-                                <div className="image-container">
-                                    <img
-                                        src={pair.before.image}
-                                        alt={pair.before.alt}
-                                        className="gallery-image"
-                                    />
-                                    
-                                    <div className="type-label before-label">
-                                        Antes
+                                <div className="comparison-container">
+                                    <div className="image-split">
+                                        <div className={`before-half ${showAfter ? 'reveal' : ''}`}>
+                                            <img
+                                                src={pair.before.image}
+                                                alt={pair.before.alt}
+                                                className="gallery-image before-image"
+                                            />
+                                        </div>
+                                        <div className="after-half">
+                                            <img
+                                                src={pair.after.image}
+                                                alt={pair.after.alt}
+                                                className="gallery-image after-image"
+                                            />
+                                        </div>
                                     </div>
-                                    
-                                    
-                                </div>
-                            </div>
-
-
-                            {/* Después Image */}
-                            <div
-                                className={`gallery-item after-item ${isVisible ? 'animate-in' : ''}`}
-                                style={{ animationDelay: `${pairIndex * 0.3 + 0.3}s` }}
-                                onClick={() => handleImageClick(pair.after)}
-                            >
-                                <div className="image-container">
-                                    <img
-                                        src={pair.after.image}
-                                        alt={pair.after.alt}
-                                        className="gallery-image"
-                                    />
-                                    
-                                    <div className="type-label after-label">
-                                        Después
+                                    <div className={`center-divider ${showAfter ? 'moved' : ''}`}>
+                                        <div className="divider-line"></div>
+                                        <div className="center-label">
+                                            <span className="dynamic-text">{showAfter ? 'DESPUÉS' : 'ANTES'}</span>
+                                        </div>
                                     </div>
-                                    
-                                    
+                                    <div className="corner-labels">
+                                        <span className={`before-label ${showAfter ? 'hidden' : 'visible'}`}>ANTES</span>
+                                        <span className={`after-label ${showAfter ? 'visible' : 'hidden'}`}>DESPUÉS</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

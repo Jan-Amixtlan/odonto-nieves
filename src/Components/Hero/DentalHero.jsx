@@ -234,6 +234,7 @@ const DentalHero = () => {
                     </button>
                 </div>
 
+                {/* Imagen antes/después */}
                 <div className={`image-section ${isLoaded ? 'loaded' : ''}`}>
                     <div className="before-after-container">
                         <div className="comparison-image">
