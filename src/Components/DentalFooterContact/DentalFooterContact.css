@@ -1,0 +1,311 @@
+:root {
+    --turquesa-principal: #20B2AA;
+    --verde-esmeralda: #00D4AA;
+    --blanco-puro: #FFFFFF;
+    --azul-claro: #4FD1C7;
+    --turquesa-oscuro: #1A9B96;
+    --gris-texto: #2C3E50;
+    --gris-claro: #7F8C8D;
+    --gris-muy-claro: #BDC3C7;
+    --fondo-claro: #F8F9FA;
+}
+
+.dental-footer-contact {
+    background: var(--fondo-claro);
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.dental-contact-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sección de Contacto - Layout Horizontal */
+.dental-contact-info-section {
+    background: linear-gradient(135deg, rgba(32,178,170,0.65) 0%, rgba(79,209,199,0.65) 100%),
+        url('/FormularioFondo2.jpg') center center/cover no-repeat;
+    color: var(--blanco-puro);
+    padding: 20px 40px;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.dental-contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.dental-contact-header {
+    text-align: center;
+}
+
+.dental-contact-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--blanco-puro);
+    margin: 0 0 15px 0;
+}
+
+.dental-contact-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Methods - Horizontal Layout */
+.dental-contact-methods {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dental-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    width: auto;
+    min-width: fit-content;
+    max-width: fit-content;
+}
+
+.dental-contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dental-contact-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.dental-contact-icon img {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+.dental-contact-details {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+    align-items: center;
+}
+
+.dental-contact-type {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--blanco-puro);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.dental-contact-value {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* Social Media Section */
+.dental-social-media-section {
+    text-align: center;
+}
+
+.dental-social-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin: 0 0 20px 0;
+}
+
+.dental-social-icon-container {
+    margin-bottom: 15px;
+}
+
+.dental-like-icon {
+    font-size: 40px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.dental-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dental-social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dental-social-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.dental-social-icon {
+    font-size: 20px;
+}
+
+.social-icon-img {
+    width: 1.8em;
+    height: 1.8em;
+    vertical-align: middle;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.dental-social-url {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dental-contact-methods {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .dental-contact-item {
+        min-width: 250px;
+    }
+
+    .dental-contact-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dental-contact-methods {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dental-contact-item {
+        min-width: auto;
+        max-width: none;
+    }
+
+    .dental-contact-info-section {
+        padding: 40px 30px;
+    }
+
+    .dental-contact-title {
+        font-size: 28px;
+    }
+
+    .dental-contact-subtitle {
+        font-size: 16px;
+    }
+
+    .dental-social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dental-contact-info-section {
+        padding: 30px 20px;
+    }
+
+    .dental-contact-title {
+        font-size: 24px;
+    }
+
+    .dental-contact-content {
+        gap: 30px;
+    }
+
+    .dental-contact-item {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .dental-contact-icon {
+        font-size: 20px;
+    }
+
+    .dental-contact-type {
+        font-size: 14px;
+    }
+
+    .dental-contact-value {
+        font-size: 13px;
+    }
+
+    .dental-social-item {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .dental-social-icon {
+        font-size: 18px;
+    }
+
+    .dental-social-url {
+        font-size: 13px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
