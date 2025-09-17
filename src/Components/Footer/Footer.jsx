@@ -6,7 +6,7 @@ const Footer = () => {
         { name: 'Tratamientos', href: '#tratamientos' },
         { name: 'Galería', href: '#galeria' },
         { name: 'Haz una cita', href: '#cita' },
-        { name: 'Contáctanos', href: '#contacto' },
+        { name: 'Contacto', href: '#contacto' },
         { name: 'Tel: (33) 1701-5391', href: 'tel:3317015391', isPhone: true }
     ];
 
@@ -78,7 +78,7 @@ const Footer = () => {
                                         >
                                             {item.name}
                                         </a>
-                                    ) : item.name === 'Contáctanos' ? (
+                                    ) : item.name === 'Contacto' ? (
                                         <a
                                             href="/#contacto"
                                             className="footer-link"

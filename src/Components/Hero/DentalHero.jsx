@@ -198,7 +198,7 @@ const DentalHero = () => {
                     </a>
                     <a href="/contact" onClick={closeMenu}>
                         <span className="nav-icon">📞</span>
-                        Contáctanos
+                        Contacto
                     </a>
                 </div>
                 <div className="mobile-nav-footer">

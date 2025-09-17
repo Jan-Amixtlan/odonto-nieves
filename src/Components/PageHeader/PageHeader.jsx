@@ -21,7 +21,7 @@ const PageHeader = ({ title = "Sobre Mi", currentPage = "sobre-mi" }) => {
         { name: 'Sobre Mi', href: '/about', id: 'sobre-mi' },
         { name: 'Servicios', href: '/services', id: 'services' },
         { name: 'Galería', href: '/galery', id: 'galeria' },
-        { name: 'Contáctanos', href: '#contactanos', id: 'contactanos' }
+        { name: 'Contacto', href: '#contactanos', id: 'contactanos' }
     ];
 
     const handleNavClick = (href, id) => {

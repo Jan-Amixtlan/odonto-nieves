@@ -1,12 +1,14 @@
 import Footer from "../Components/Footer/Footer";
 import PageHeader from "../Components/PageHeader/PageHeader";
-import AppointmentContact from "../Components/AppointmentContact/AppointmentContact";
 import LocationContact from "../Components/LocationContact/LocationContact";
+import AppointmentForm from "../Components/AppointmentForm/AppointmentForm";
+import AppointmentContact from "../Components/AppointmentContact/AppointmentContact";
 
 const ContactScreen = () => {
     return (
         <div>
-            <PageHeader title="Contáctanos" />
+            <PageHeader title="Contacto" />
+            <AppointmentForm /> 
             <AppointmentContact />
             <LocationContact />
             <Footer />
