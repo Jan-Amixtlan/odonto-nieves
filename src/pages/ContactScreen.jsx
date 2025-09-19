@@ -8,7 +8,7 @@ import DentalFooterContact from "../Components/DentalFooterContact/DentalFooterC
 const ContactScreen = () => {
     return (
         <div>
-            <PageHeader title="Contacto" />
+            <PageHeader title="Contacto" currentPage="contactanos" />
             <AppointmentForm /> 
 
             <LocationContact />

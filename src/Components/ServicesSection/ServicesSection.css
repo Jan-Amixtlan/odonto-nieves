@@ -20,7 +20,7 @@
 .services-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 10px;
 }
 
 /* Header de la sección */
@@ -134,7 +134,7 @@
 }
 
 .service-image {
-    width: 100%;
+    width: 240px;
     height: 200px;
     object-fit: cover;
     border-radius: 12px;
@@ -358,11 +358,15 @@
 
     /* Ajustes para overlay en móvil */
     .service-overlay {
-        margin: 0 15px;
+        left: 15px;
+        right: 15px;
+        top: 0;
+        bottom: 0;
     }
 
     .overlay-content {
         padding: 20px 15px;
+        max-width: 90%;
     }
 
     .overlay-question {
