@@ -17,13 +17,13 @@ const DentalFooterContact = () => {
         },
         {
              icon: <img src="/contacto-correo-electronico.png" alt="Email" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
-            title: "",
+            title: "Email:",
             info: "blancanieves@odontonieves.com",
             action: () => window.open('mailto:blancanieves@odontonieves.com', '_blank')
         },
         {
              icon: <img src="/marcador-de-posicion.png" alt="Ubicación" style={{ width: '1.3em', height: '1.3em', verticalAlign: 'middle' }} />,
-            title: "",
+            title: "Ubicación:",
             info: "Av. Manuel Acuña #2755 Piso 2 Col. Providencia, C.P. 44680 Guadalajara, Jalisco.",
             action: () => window.open('https://maps.google.com/?q=Av.+Manuel+Acuña+2755+Guadalajara', '_blank')
         }

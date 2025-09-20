@@ -75,10 +75,10 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 50px;
+    padding: 8px 50px;
     position: relative;
     z-index: 10;
-    margin-top: -5px;
+    margin-top: 5px;
     margin-bottom: -30px;
     width: 95%;
     opacity: 0;
@@ -86,7 +86,7 @@ html, body {
     animation: slideDown 0.8s ease forwards;
     animation-delay: 0.2s;
     height: 35px;
-    top: -50px;
+    top: 0px;
 }
 
 @keyframes slideDown {
@@ -938,8 +938,8 @@ html, body {
 
 @media (max-width: 768px) {
     .header {
-        padding: 0px 20px;
-        margin-top: -5px;
+        padding: 8px 20px;
+        margin-top: 5px;
         margin-bottom: -25px;
         animation-delay: 0.1s;
         height: 25px;
@@ -1068,8 +1068,8 @@ html, body {
     }
 
     .header {
-        padding: 10px 15px;
-        margin-top: -10px;
+        padding: 8px 15px;
+        margin-top: 8px;
     }
 
     .dental-hero .logo {
